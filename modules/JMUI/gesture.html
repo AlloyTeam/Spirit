@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mobile web solutions, based on project Mars.">
+  <meta name="author" content="Alloyteam">
+  
+  <title>JMUI &middot; Demo &middot; Gesture | Spirit - 腾讯移动Web整体解决方案 | AlloyTeam</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/Spirit/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy this line! -->
+  <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  <link href="/Spirit/css/common.css" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset="70">
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/Spirit/" class="navbar-brand">Spirit</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li><a href="/Spirit/modules/Standard/index.html">移动Web开发规范</a></li>
+            <li class="dropdown">
+              <a id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">JM<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/JM/index.html">组件</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://github.com/AlloyTeam/JM/archive/master.zip">下载</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" target="_blank" href="https://github.com/AlloyTeam/JM">View on Github</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">JMUI<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/JMUI/index.html">简介</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/JMUI/demo.html">组件</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://github.com/AlloyTeam/JMUI/archive/master.zip">下载</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" target="_blank" href="https://github.com/AlloyTeam/JMUI">View on Github</a></li>
+              </ul>
+            </li>
+            <li><a href="/Spirit/modules/Mobug/index.html">Mobug</a></li>
+            <li><a href="/Spirit/modules/Mars/index.html">Mars</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+              <li><a data-toggle="modal" data-target="#myModal" href="javascript:;">关于Spirit</a></li>
+              <li><a target="_blank" href="http://www.alloyteam.com/about/">关于我们</a></li>
+          </ul>
+        </nav>
+    </div>
+</header>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/Spirit/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/Spirit/bootstrap3/js/bootstrap.min.js"></script>
+<script src="/Spirit/js/common.js"></script>
+
+  <style>
+#w{
+	-webkit-user-select: none;
+	width: 500px; 
+	height: 400px;
+	background: black;
+	font-size: 38px;
+	font-weight: bold;
+	color: orange;
+}
+</style>
+
+<div class="container">
+	<h4>tap doubletap swipe drag transform hold等手势</h4>
+	<div id="w" class="ww"></div>
+	<div id="currentPos"></div>
+	<div id="preTouchPos"></div>
+</div>
+<script type="text/javascript" src="js/JM.js"></script>
+<script type="text/javascript">
+
+	var wobj = J.dom.id("w");
+	J.event.on(wobj,"touchmove touchstart touchend",function(e){
+		e.stopPropagation();
+		e.preventDefault();
+	});
+
+	J.event.on(wobj,"hold",function(e){
+		// alert(e.position.x+" "+ e.position.y);
+		wobj.innerHTML="hold";
+	});
+	J.event.on(wobj,"tap",function(e){
+		if(e.isDoubleTap) wobj.innerHTML="doubletap";
+		// alert(e.position.x);
+		else wobj.innerHTML="tap";
+	});
+	J.event.on(wobj,{
+		dragstart:function() {
+			wobj.innerHTML="dragstart";
+		},
+		drag:function(e){
+
+			//console.log(e.angle);
+			wobj.innerHTML="drag";
+		},
+		dragend:function(e){
+			// alert(e.distance + " " + e.angle);
+			wobj.innerHTML="dragend";
+		},
+		swipe:function(e){
+			wobj.innerHTML="swipe" + e.direction ;
+		},
+		transformstart:function(e){
+			// cm.dom.id("preTouchPos").innerHTML = (e.position.x);
+			wobj.innerHTML="transformstart";
+		},
+		transform:function(e){
+			wobj.innerHTML="transform: "
+						   +"scale:" + e.scale 
+						   +"<br/>"
+						   +"rotation:" + e.rotation;
+		    wobj.style["-webkit-transform"] = "rotate("+e.rotation+"deg) scale("+e.scale+")";
+		},
+		transformend:function(e){
+			// alert(e.rotation);
+			wobj.innerHTML="transformend";
+		}
+	});
+</script>
+
+  <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">关于Spirit</h4>
+      </div>
+      <div class="modal-body">
+        <p>Spirit（勇气号），美国航天局NASA派往Mars（火星）的第一艘探测器。</p>
+        <p>移动Web开发是一块新的领域，甚至有很多坑，这一点与人类从未踏上的Mars（火星）相似。为了避免开发者重复遇到相同的问题，我们创建了Mars项目（<a target="_blank" href="https://github.com/AlloyTeam/Mars">view on Github</a>），收集与归纳移动Web开发中常见的问题。</p>
+        <p>Spirit正是为了Mars而生，Mars项目中归纳的问题，会放到Spirit中解决，并沉淀到开发工具（JM与JMUI）以及开发规范中，真正建立移动Web开发的集成解决方案。</p>
+        <p>如果你也在移动Web遇到了问题，请到<a target="_blank" href="https://github.com/AlloyTeam/Mars">Mars项目</a>提交Issue。<span class="glyphicon glyphicon-heart-empty"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  <div class="footer">
+    <div class="container text-center">
+        <p><a href="http://alloyteam.github.io/Spirit/MIT-LICENSE.txt">开源协议</a> | <a target="_blank" href="https://github.com/AlloyTeam/Spirit/issues/new">反馈意见</a></p>
+        <p>© 2011-2014 <a target="_blank" href="http://www.alloyteam.com/">Tencent Alloyteam</a>. All Rights Reserved. Powered by <a target="_blank" href="http://zespia.tw/hexo/">Hexo</a></p>
+    </div>
+</div>
+
+  <!--Tencent Analytics-->
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=24711241" charset="UTF-8"></script>
+<!--Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23019343-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

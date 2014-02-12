@@ -1,0 +1,36 @@
+.demo_block ul{
+    margin-left: 0; /*跟page-content的样式跟JMUI样式冲突*/
+    list-style: none;
+}
+
+.param_list .param, .event_list{
+    color: #4B8110;
+}
+.function_list .funcName, .function_list li{
+    color: #2487AD;
+}
+.function_list .desc,.event_list .desc{
+    color: black;
+}
+
+/* bootstrap样式和JMUI的样式冲突 */
+.radio+.radio, .checkbox+.checkbox {
+    margin-top: 10px;
+}
+
+/**JMUI Demo 样式相关**/
+.tab_body > li > div{
+    height: 200px;
+    background: rgb(228, 228, 228);
+    text-indent: 20px;
+}
+
+.wrap > div > div{
+    height: 100%;
+    line-height: 100px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    background: rgb(130, 197, 197);
+}
