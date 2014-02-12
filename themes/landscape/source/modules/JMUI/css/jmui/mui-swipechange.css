@@ -1,0 +1,19 @@
+.swipeChange{
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	overflow-x:hidden;
+}
+.swipeChange > .wrap{
+	height: 100%;
+}
+.swipeChange > .wrap > div{
+	float: left;
+	height: 100%;
+	outline: 1px solid white;
+	border-radius: 5px;
+	overflow-x:hidden;
+}
+.swipeChange > .wrap > div > div{
+	height: 100%;
+}

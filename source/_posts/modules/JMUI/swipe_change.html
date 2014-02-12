@@ -1,0 +1,40 @@
+title: JMUI &middot; Demo &middot; Swipe
+---
+
+<link rel="stylesheet" type="text/css" href="css/jmui/mui-base.css" />
+<link rel="stylesheet" type="text/css" href="css/jmui/mui-swipechange.css" />
+<style>
+.wrap > div > div{
+	height: 100%;
+	line-height: 100px;
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+	background: rgb(130, 197, 197);
+}
+
+</style>
+
+<div class="container">
+	<h4 style="position:absolute;z-index:1;">拖动切换</h4>
+	<div id='slider' class='swipeChange'>
+		<div class="wrap">
+			<div><div>1</div></div>
+			<div><div>2</div></div>
+			<div><div>3</div></div>
+			<div><div>4</div></div>
+			<div><div>5</div></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/JM.js"></script>
+	<script type="text/javascript" src="js/jmui/swipechange.js"></script>
+	<script type="text/javascript">
+		var sc = new MUI.SwipeChange({
+			id:"slider",
+			currentIndex:1,
+			canSwipe:true
+			
+		});
+	</script>
+</div>

@@ -1,0 +1,88 @@
+title: JM &middot; Hello World
+---
+
+<link rel="stylesheet" href="css/jmui/mui-base.css" />
+<link rel="stylesheet" type="text/css" href="css/jmui/mui-buttons-new.css" />
+<style>
+#myButton{
+}
+.word{
+	position: relative;
+	width: 100%;
+	margin: 50px auto 0;
+}
+#word1{
+	font: 50px/1.5 '\5fae\8f6f\96c5\9ed1',Tahoma,sans-serif;
+	position: absolute;
+	opacity: 0;
+}
+#word2{
+	margin-left: 80px;
+	position: absolute;
+	opacity: 0;
+	top: 160px;
+}
+</style>
+</head>
+
+<body>
+
+<button id="myButton" class="btn btn-primary btn-block" >
+	<span class="btn_text">Hello World</span>
+</button>
+
+<div class="word">
+	<div id="word1">Hello World !</div>
+	<h2 id="word2" >by Tencent AlloyTeam</h2>
+</div>
+
+
+
+<script src="js/JM.js"></script>
+<script >
+	var $E = JM.event;
+	var $D = JM.dom;
+
+	var btn = $D.id('myButton');
+	var word1 = $D.id('word1');
+	var word2 = $D.id('word2');
+
+	$E.on(btn,'click',function(){
+		//设置动画基本参数，并且每个动画间隔为1.5秒
+		J.Animation({
+			selector:'#word1',
+			duration:1500,
+			use3d:true
+		}).setStyle({		//向右运动了40%，并且color变成蓝色
+			'top':'60px',
+			'opacity':'1'
+		}).transit(function(){
+			
+			this.setDuration(600);
+			this.scale(2).setStyle({
+				'top': '40px',
+				'opacity':'0'
+			}).transit(function(){
+				word1.style.cssText = "";  //清空dom的style，让动画回归起初状态
+			});
+		});
+
+		J.Animation({
+			selector:'#word2',
+			duration: 1500,
+			use3d : true
+		}).setStyle({
+			'top':'140px',
+			'opacity':'1'
+		}).transit(function(){
+			
+			this.setDuration(800);
+			this.scale(2).setStyle({
+				'top': '150px',
+				'opacity':'0'
+			}).transit(function(){
+				word2.style.cssText = "";
+			});
+		});
+	});
+</script>

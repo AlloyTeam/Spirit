@@ -1,0 +1,64 @@
+title: Mobug 
+---
+
+<section class="container row">
+    <div class="col-md-3">
+        <div id="sidebar" class="my_sidebar">
+            <ul class="nav">
+                <li class="sidebar_head_li"><a href="#overview">Mobug简介</a></li>
+                <li class="sidebar_head_li"><a href="#platform">支持平台</a></li>
+                <li class="sidebar_head_li"><a href="#download">下载</a></li>         
+            </ul>
+        </div>
+    </div>
+
+    <div class="page_content col-md-9" role="main">
+        <section id="overview">
+            <h2>Mobug</h2>
+            <p>Mobug是一款运行在Windows平台上的移动Web远程调试工具，由<code>Alloyteam</code>自行研发。Mobug参考了Chrome Inspector调试工具的界面，可调试移动设备上的Web页面以及App中的Webview页面，功能强大，使用方便。</p>
+            <p style="text-align:center;">
+             <img src="./img/screen.png">
+            </p>
+        </section>
+        
+        <section id="platform">
+            <h2>支持平台</h2>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p><b>运行平台：</b>Windows</p>
+                    <p><b>支持移动平台：</b>iOS、Android</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="download">
+            <h2>下载</h2>
+            <p>即将开放下载，敬请期待</p>
+        </section>
+    </div>
+</section>
+
+<script>
+$(function(){
+    // back to top
+    setTimeout(function () {
+      var $sideBar = $('.my_sidebar')
+
+      $sideBar.affix({
+        offset: {
+          top: function () {
+            var offsetTop      = $sideBar.offset().top
+            var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+            var navOuterHeight = $('#header').height()
+
+            return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+          }
+        , bottom: function () {
+            return (this.bottom = $('.footer').outerHeight(true))
+          }
+        }
+      })
+    }, 100)
+
+});
+</script>

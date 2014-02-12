@@ -1,0 +1,78 @@
+# Hexo Configuration
+## Docs: http://zespia.tw/hexo/docs/configuration.html
+## Source: https://github.com/tommy351/hexo/
+
+# Site
+title: Spirit - 腾讯移动Web整体解决方案 | AlloyTeam
+subtitle:
+description:
+author: John Doe
+email:
+language:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://yoursite.com
+root: /
+permalink: :title.html
+tag_dir: tags
+category_dir: categories
+
+# Directory
+source_dir: source
+public_dir: public
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+auto_spacing: false # Add spaces between asian characters and western characters
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+max_open_file: 100
+multi_thread: true
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+highlight:
+  enable: true
+  line_number: true
+  tab_replace:
+
+# Server
+## Hexo uses Connect as a server
+## You can customize the logger format as defined in
+## http://www.senchalabs.org/connect/logger.html
+port: 4000
+logger: false
+logger_format:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: MMM D YYYY
+time_format: H:mm:ss
+
+# Extensions
+## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
+## Themes: https://github.com/tommy351/hexo/wiki/Themes
+theme: landscape
+exclude_generator:
+
+# Markdown
+## https://github.com/chjj/marked
+markdown:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+
+# Deployment
+## Docs: http://zespia.tw/hexo/docs/deployment.html
+deploy:
+  type: github
+  repo: https://github.com/AlloyTeam/Spirit.git
+  branch: gh-pages

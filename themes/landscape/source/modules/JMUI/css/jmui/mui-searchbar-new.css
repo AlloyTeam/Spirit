@@ -1,0 +1,155 @@
+/* 对input focus后placeholder的自定义样式 */
+/*#search-ipt:focus::-webkit-input-placeholder{*/
+/*transition: text-indent 1s 0.2s ease;*/
+/*position: relative;*/
+/*text-indent: -100px;*/
+/*opacity: 1;*/
+/*}*/
+
+.searchbar {
+    /* ios下使溢出的元素禁止出现滚动条，可尝试设置父级为禁止溢出 */
+    position: relative;
+    overflow: hidden;
+    padding: 6px 10px;
+    margin: 0;
+    background: #C7C7C7;
+    /*background: -webkit-gradient(linear, 0 0, 0 100%, from(#D6D6D6), to(#BEBEBE));*/
+    border-bottom: solid #B6B8BC 1px;
+    border-top: solid #878889 1px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+}
+
+.searchbar input::-webkit-input-placeholder{
+    padding-top: 1px;
+}
+
+.icon-search{
+    z-index: 2;
+    background-color: #fff;
+    background-image: url('../img/icon-search.png?datauri');
+    background-size: 16px;
+    -webkit-background-size: 16px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    display: inline-block;
+    left: 20px;
+    top: 14px;
+    /*margin-top: -5px;*/
+    content: "";
+    vertical-align: text-top;
+    background-repeat: no-repeat;
+}
+
+.searchbar input, .searchbar button {
+    /*添加空的 translate3d 声明，可开启GPU性能加速*/
+    /*-webkit-transform: translate3d(0, 0, 0);*/
+    /*transform: translate3d(0, 0, 0);*/
+    -webkit-transition: 0.2s cubic-bezier(.20, .20, .50, 1);
+    transition: 0.2s cubic-bezier(.20, .20, .50, 1);
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-perspective: 1000;
+    perspective: 1000;
+
+    /* 重置默认样式 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-appearance: none;
+}
+
+.searchbar input {
+    /* 切换到IE的盒子模型 */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-left: 30px;
+    height: 32px;
+    line-height: 16px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    /* 重置 android input focus 的默认样式*/
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+.searchbar .clear-btn-wrapper {
+ 
+    position: absolute;
+    display: inline-block;
+    right: 20px;
+    top: 13px;
+    background: #ccc;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+}
+
+.searchbar .clear-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    width: 18px;
+    height: 18px; 
+    margin: 0;
+    padding: 0;
+}
+
+
+.searchbar button {
+    font-size: 14px;
+    height: 32px;
+    visibility: hidden;
+    position: absolute;
+    right: -50px;
+    top: 5px;
+    color: #858585;
+    margin: 0 0 0 4px;
+    padding: 6px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: solid #ADADAD 1px;
+    /* 考虑把渐变单独抽离 */
+    background: #DFDFDF;
+    /*background: -webkit-gradient(linear, 0 0, 0 100%, from(#EAEAEA), to(#CECECE));*/
+}
+
+.searchbar .hidden {
+    border: none;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+}
+
+.searchbar button.show{
+    visibility: visible;
+    right: 6px;
+}
+
+
+.search-overlay.show {
+    visibility: visible;
+}
+
+.search-overlay {
+    visibility: hidden;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.6);
+}

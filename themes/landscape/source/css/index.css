@@ -1,0 +1,74 @@
+.banner {
+  margin-bottom: 20px;
+  background-image: url(../img/Mars_Rover.jpg);
+  background-size: cover;
+  box-shadow: #000 0 0 20px;
+}
+
+.jumbotron {
+  background-color: transparent;
+  color: #FFF5EE;
+}
+/* Pad the edges of the mobile views a bit */
+.content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.content .col-lg-4 {
+  text-align: center;
+}
+.content h2 {
+  font-weight: normal;
+}
+.content .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.content .col-lg-4 a {
+  text-decoration: none;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-left:  15px;
+    padding-right: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-left:  0;
+    padding-right: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .jumbotron {
+    padding-top: 1px;
+  }
+  .banner {
+    padding-bottom: 17%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .jumbotron {
+    padding-top: 50px;
+  }
+  .banner {
+    padding-bottom: 17%;
+  }
+}

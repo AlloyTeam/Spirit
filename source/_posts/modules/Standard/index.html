@@ -1,0 +1,153 @@
+title: 移动Web开发规范
+---
+
+<link rel="stylesheet" href="/Spirit/css/prism.css" />
+<style>
+    section > ul li {
+        margin-bottom: 5px;
+    }
+    .pun {
+        color: #660;
+    }
+    .typ {
+        color: #606;
+    }
+</style>
+
+<section class="container row">
+    <div class="col-md-3">
+        <div id="sidebar" class="my_sidebar">
+            <ul class="nav">
+                <li class="sidebar_head_li"><a href="#overview">规范概述</a></li>
+                <li class="sidebar_head_li"><a href="#font">字体设置</a></li>
+                <li class="sidebar_head_li"><a href="#base_ui">基础交互</a></li>
+                <li class="sidebar_head_li"><a href="#performance">移动性能</a></li>            
+            </ul>
+        </div>
+    </div>
+
+    <div class="page_content col-md-9" role="main">
+        <section id="overview">
+            <h2>移动开发规范概述</h2>
+            <p>以下规范建议，均是<code>Alloyteam</code>在日常开发过程中总结提炼出的经验，规范具备较好的项目实践，强烈推荐使用</p>
+        </section>
+        
+        <section id="font">
+            <h2>字体设置</h2>
+            <p>使用无衬线字体</p>
+            <pre class="language-css"><code>body {
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}</code></pre>
+
+            <p>iOS 4.0+ 使用英文字体 Helvetica Neue，之前的iOS版本降级使用 Helvetica。中文字体设置为华文黑体STHeiTi。
+    需补充说明，华文黑体并不存在iOS的字体库中(<a href="http://support.apple.com/kb/HT5484?viewlocale=en_US" target="_blank">http://support.apple.com/kb/HT5484?viewlocale=en_US</a>)， 但系统会自动将华文黑体STHeiTi兼容命中系统默认中文字体黑体-简或黑体-繁</p>
+        <pre class="prettyprint"><span class="typ">Heiti</span><span class="pln"> SC </span><span class="typ">Light</span><span class="pln"> </span><span class="pun">黑体-简</span><span class="pln"> </span><span class="pun">细体</span><span class="pln">
+</span><span class="typ">Heiti</span><span class="pln"> SC </span><span class="typ">Medium</span><span class="pln"> </span><span class="pun">黑体-简</span><span class="pln"> </span><span class="pun">中黑</span><span class="pln">
+</span><span class="typ">Heiti</span><span class="pln"> TC </span><span class="typ">Light</span><span class="pln"> </span><span class="pun">黑体-繁</span><span class="pln"> </span><span class="pun">细体</span><span class="pln">
+</span><span class="typ">Heiti</span><span class="pln"> TC </span><span class="typ">Medium</span><span class="pln"> </span><span class="pun">黑体-繁</span><span class="pln"> </span><span class="pun">中黑</span></pre>
+
+            <p>原生Android下中文字体与英文字体都选择默认的无衬线字体</p>
+        <pre class="prettyprint"><span class="lit">4.0</span><span class="pln"> </span><span class="pun">之前版本英文字体原生</span><span class="pln"> </span><span class="typ">Android</span><span class="pln"> </span><span class="pun">使用的是</span><span class="pln"> </span><span class="typ">Droid</span><span class="pln"> </span><span class="typ">Sans</span><span class="pun">，中文字体原生</span><span class="pln"> </span><span class="typ">Android</span><span class="pln"> </span><span class="pun">会命中</span><span class="pln"> </span><span class="typ">Droid</span><span class="pln"> </span><span class="typ">Sans</span><span class="pln"> </span><span class="typ">Fallback</span><span class="pln">
+</span><span class="lit">4.0</span><span class="pln"> </span><span class="pun">之后中英文字体都会使用原生</span><span class="pln"> </span><span class="typ">Android</span><span class="pln"> </span><span class="pun">新的</span><span class="pln"> </span><span class="typ">Roboto</span><span class="pln"> </span><span class="pun">字体</span><span class="pln">
+</span><span class="pun">其他第三方</span><span class="pln"> </span><span class="typ">Android</span><span class="pln"> </span><span class="pun">系统也一致选择默认的无衬线字体</span></pre>
+        </section>
+
+    
+        <section id="base_ui">
+            <h2>基础交互</h2>
+            <p>设置全局的CSS样式，避免图中的长按弹出菜单与选中文本的行为</p>
+            <pre class="language-css"><code>a, img {
+    -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
+html, body {
+    -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+    user-select: none;
+}</code></pre>
+
+            <p style="text-align:center;">
+            <img width="200px" src="./img/user-select.png">
+            </p>
+        </section>
+
+        <section id="performance">
+            <h2 id="performance">移动性能</h2>
+            <h4>要考虑<code>Android</code>低端机与<code>2G</code>网络场景下性能 <span class="label label-danger">注意！</span></h4>
+            <p>发布前必要检查项</p>
+            <ul>
+                <li>所有图片必须有进行过压缩</li>
+                <li>考虑适度的有损压缩，如转化为80%质量的jpg图片</li>
+                <li>考虑把大图切成多张小图，常见在banner图过大的场景</li>
+            </ul>
+            <p>加载性能优化, 达到打开足够快</p>
+            <ul>
+                <li>数据离线化，考虑将数据缓存在 localStorage</li>
+                <li>初始请求资源数 <code>&lt; 4</code> <span class="label label-danger">注意！</span>
+                <li>图片使用CSS Sprites 或 DATAURI</li>
+                <li>外链 CSS 中避免 @import 引入</li>
+                <li>考虑内嵌小型的静态资源内容</li>
+                <li>初始请求资源gzip后总体积 <code>&lt; 50kb</code>
+                <li>静态资源(HTML/CSS/JS/IMAGE)是否优化压缩？</li>
+                <li>避免打包大型类库</li>
+                <li>确保接入层已开启Gzip压缩</li>
+                <li>尽量使用CSS3代替图片</li>
+                <li>初始首屏之外的图片资源需延迟加载 <span class="label label-danger">注意！</span></li>
+                <li>单页面应用(SPA)考虑延迟加载非首屏业务模块</li>
+            </ul>
+            <p>运行性能优化, 达到操作足够流畅</p>
+            <ul>
+                <li>避免 iOS 300+ms 点击延时问题 <span class="label label-danger">注意！</span></li>
+                <li>缓存 DOM 选择与计算</li>
+                <li>避免触发页面重绘的操作</li>
+                <li>Debounce连续触发的事件(scroll/resize)，避免高频繁触发执行</li>
+                <li>尽可能使用事件代理，避免批量绑定事件</li>
+                <li>使用CSS3动画代替JS动画</li>
+                <li>避免在低端机上使用大量CSS3渐变阴影效果，可考虑降级效果来提升流畅度</li>
+                <li>HTML结构层级保持足够简单，推荐不超过 5 个层级</li>
+                <li>尽能少的使用CSS高级选择器与通配选择器</li>
+                <li>Keep it simple</li>
+            </ul>
+
+            <p>在线性能检测评定工具使用指南</p>
+            <ul>
+                <li>访问 <a href="http://developers.google.com/speed/pagespeed/insights/" target="_blank">Google PageSpeed</a> 在线评定网站</li>
+                <li>在地址栏输入目标URL地址，点击分析按钮开始检测</li>
+                <li>按 PageSpeed 分析出的建议进行优化，优先解决红色类别的问题</li>
+            </ul>
+
+            <p>推荐阅读</p>
+            <ul>
+                <li><a href="http://www.webperformancetoday.com/tag/mobile-web-performance/" target="_blank">移动WEB性能</a></li>
+                <li><a href="https://developers.google.com/speed/docs/best-practices/caching" target="_blank">优化WEB缓存</a></li>
+                <li><a href="https://developers.google.com/speed/docs/best-practices/rtt" target="_blank">最小化RTT次数</a></li>
+                <li><a href="https://developers.google.com/speed/docs/best-practices/payload" target="_blank">最小化请求负载</a></li>
+                <li><a href="https://developers.google.com/speed/docs/best-practices/rendering" target="_blank">优化浏览器渲染</a></li>
+            </ul>
+        </section>
+        </div>
+</section>
+
+<script>
+$(function(){
+    // back to top
+    setTimeout(function () {
+      var $sideBar = $('.my_sidebar')
+
+      $sideBar.affix({
+        offset: {
+          top: function () {
+            var offsetTop      = $sideBar.offset().top
+            var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+            var navOuterHeight = $('#header').height()
+
+            return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+          }
+        , bottom: function () {
+            return (this.bottom = $('.footer').outerHeight(true))
+          }
+        }
+      })
+    }, 100);
+
+});
+</script>
+<script type="text/javascript" src="/Spirit/js/prism.js"></script>
