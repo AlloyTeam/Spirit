@@ -22,7 +22,7 @@ title: JM
                 <li class="sidebar_head_li"><a href="#animation">Animation</a></li>
                 <li class="sidebar_head_li"><a href="#audio">audio(按需加载)</a></li>
                 <li class="sidebar_head_li"><a href="#base">base</a></li>
-                <li class="sidebar_head_li"><a href="#borwser">borwser</a></li>
+                <li class="sidebar_head_li"><a href="#browser">browser</a></li>
                 <li class="sidebar_head_li"><a href="#cookie">cookie</a></li>
                 <li class="sidebar_head_li"><a href="#dom">dom</a></li>
                 <li class="sidebar_head_li"><a href="#event">event</a></li>
@@ -255,7 +255,7 @@ var AnimateTab = J.Class({extend:MUI.Tab},{
             <li>random : function(min, max){}</li>
         </ul>
 
-        <h2 id="borwser">borwser 浏览器检测模块</h2>
+        <h2 id="browser">browser 浏览器检测模块</h2>
         <p>
             本可简单简单地划分到utils模块，但是在移动web上我们检测的不单单是浏览器及其版本后，后继拓展还有，终端平台及其版本，所以我们单独地划分出一个模块出来（其实最终还是会合到一个js里面）。
         </p>
@@ -471,7 +471,7 @@ $E.on(document.body ,endEvt ,_handleEvent);</code></pre>
         </ul>
 
     <h2 id="platform">platform 平台检查模块</h2>
-    <p>平台检查模块跟borwser模块一样，是检测模块，后继优化会把两者这合并。为兼容多终端多版本，平台检查是少不了。</p>
+    <p>平台检查模块跟browser模块一样，是检测模块，后继优化会把两者这合并。为兼容多终端多版本，平台检查是少不了。</p>
     <p>示例代码</p>
     <pre class="language-javascript"><code>if(J.platform.android &amp;&amp; J.platform.ieVersion &gt; 4){
     //....
