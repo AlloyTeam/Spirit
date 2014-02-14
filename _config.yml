@@ -6,14 +6,14 @@
 title: Spirit - 腾讯移动Web整体解决方案 | AlloyTeam
 subtitle:
 description:
-author: John Doe
+author: AlloyTeam
 email:
 language:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
-root: /
+url: http://alloyteam.github.io
+root: /Spirit/
 permalink: :title.html
 tag_dir: tags
 category_dir: categories
@@ -42,16 +42,9 @@ highlight:
 ## Hexo uses Connect as a server
 ## You can customize the logger format as defined in
 ## http://www.senchalabs.org/connect/logger.html
-port: 4000
+port: 80
 logger: false
 logger_format:
-
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
-date_format: MMM D YYYY
-time_format: H:mm:ss
 
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
