@@ -71,7 +71,7 @@ html, body {
 
         <section id="performance">
             <h2 id="performance">移动性能</h2>
-            <h4>要考虑<code>Android</code>低端机与<code>2G</code>网络场景下性能 <span class="label label-danger">注意！</span></h4>
+            <h4>要考虑<code>Android</code>低端机与<code>2G</code>网络场景下性能 <sup><span class="label label-danger">注意！</span></sup></h4>
             <p>发布前必要检查项</p>
             <ul>
                 <li>所有图片必须有进行过压缩</li>
@@ -81,7 +81,7 @@ html, body {
             <p>加载性能优化, 达到打开足够快</p>
             <ul>
                 <li>数据离线化，考虑将数据缓存在 localStorage</li>
-                <li>初始请求资源数 <code>&lt; 4</code> <span class="label label-danger">注意！</span>
+                <li>初始请求资源数 <code>&lt; 4</code> <sup><span class="label label-danger">注意！</span></sup>
                 <li>图片使用CSS Sprites 或 DATAURI</li>
                 <li>外链 CSS 中避免 @import 引入</li>
                 <li>考虑内嵌小型的静态资源内容</li>
@@ -90,12 +90,12 @@ html, body {
                 <li>避免打包大型类库</li>
                 <li>确保接入层已开启Gzip压缩</li>
                 <li>尽量使用CSS3代替图片</li>
-                <li>初始首屏之外的图片资源需延迟加载 <span class="label label-danger">注意！</span></li>
+                <li>初始首屏之外的图片资源需延迟加载 <sup><span class="label label-danger">注意！</span></sup></li>
                 <li>单页面应用(SPA)考虑延迟加载非首屏业务模块</li>
             </ul>
             <p>运行性能优化, 达到操作足够流畅</p>
             <ul>
-                <li>避免 iOS 300+ms 点击延时问题 <span class="label label-danger">注意！</span></li>
+                <li>避免 iOS 300+ms 点击延时问题 <sup><span class="label label-danger">注意！</span></sup></li>
                 <li>缓存 DOM 选择与计算</li>
                 <li>避免触发页面重绘的操作</li>
                 <li>Debounce连续触发的事件(scroll/resize)，避免高频繁触发执行</li>
