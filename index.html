@@ -81,7 +81,7 @@
 
   <div class="banner">
       <div class="jumbotron">
-          <h1>Spirit</h1>
+          <h1 id="banner_title">Spirit</h1>
           <p>腾讯移动Web整体解决方案</p>
           <p><a class="btn btn-success btn-lg" role="button" data-toggle="modal" data-target="#myModal">了解更多</a></p>
       </div>
@@ -114,6 +114,17 @@
       </div><!-- /.col-lg-4 -->
   </div>
 </div>
+
+<script type="text/javascript" src="/Spirit/js/jquery.shuffleLetters.js"></script>
+<script>
+  // Shuffle the container with custom text
+  $("#banner_title").mouseover(function(){
+    $(this).shuffleLetters({
+      text: "Spirit",
+      step: 2
+    });
+  });
+</script>
 
   <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
