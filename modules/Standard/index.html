@@ -95,7 +95,7 @@
                 <li class="sidebar_head_li"><a href="#overview">规范概述</a></li>
                 <li class="sidebar_head_li"><a href="#font">字体设置</a></li>
                 <li class="sidebar_head_li"><a href="#base_ui">基础交互</a></li>
-                <li class="sidebar_head_li"><a href="#performance">移动性能</a></li>            
+                <li class="sidebar_head_li"><a href="#performance">移动性能</a></li>
             </ul>
         </div>
     </div>
@@ -114,8 +114,8 @@
 }</code></pre>
 
             <p>iOS 4.0+ 使用英文字体 Helvetica Neue，之前的iOS版本降级使用 Helvetica。中文字体设置为华文黑体STHeiTi。
-    需补充说明，华文黑体并不存在iOS的字体库中(<a href="http://support.apple.com/kb/HT5484?viewlocale=en_US" target="_blank">http://support.apple.com/kb/HT5484?viewlocale=en_US</a>)， 但系统会自动将华文黑体STHeiTi兼容命中系统默认中文字体黑体-简或黑体-繁</p>
-        <pre class="prettyprint"><span class="typ">Heiti</span><span class="pln"> SC </span><span class="typ">Light</span><span class="pln"> </span><span class="pun">黑体-简</span><span class="pln"> </span><span class="pun">细体</span><span class="pln">
+    需补充说明，华文黑体并不存在iOS的字体库中(<a href="http://support.apple.com/kb/HTHT5878" target="_blank">http://support.apple.com/kb/HT5878</a>)， 但系统会自动将华文黑体 STHeiTi 兼容命中系统默认中文字体黑体-简或黑体-繁</p>
+        <pre class="prettyprint"><span class="typ">Heiti</span><span class="pln"> SC </span><span class="typ">Light</span><span class="pln"> </span><span class="pun">黑体-简</span><span class="pln"> </span><span class="pun">细体</span><span class="pln"> （iOS 7后废弃）
 </span><span class="typ">Heiti</span><span class="pln"> SC </span><span class="typ">Medium</span><span class="pln"> </span><span class="pun">黑体-简</span><span class="pln"> </span><span class="pun">中黑</span><span class="pln">
 </span><span class="typ">Heiti</span><span class="pln"> TC </span><span class="typ">Light</span><span class="pln"> </span><span class="pun">黑体-繁</span><span class="pln"> </span><span class="pun">细体</span><span class="pln">
 </span><span class="typ">Heiti</span><span class="pln"> TC </span><span class="typ">Medium</span><span class="pln"> </span><span class="pun">黑体-繁</span><span class="pln"> </span><span class="pun">中黑</span></pre>
@@ -139,7 +139,7 @@ html, body {
 }</code></pre>
 
             <p style="text-align:center;">
-            <img width="200px" src="./img/user-select.png">
+            <img width="400px" src="./img/user-select.png">
             </p>
         </section>
 
@@ -156,27 +156,29 @@ html, body {
             <ul>
                 <li>数据离线化，考虑将数据缓存在 localStorage</li>
                 <li>初始请求资源数 <code>&lt; 4</code> <sup><span class="label label-danger">注意！</span></sup>
-                <li>图片使用CSS Sprites 或 DATAURI</li>
+                <li>图片使用CSS Sprites 或 DataURI</li>
                 <li>外链 CSS 中避免 @import 引入</li>
                 <li>考虑内嵌小型的静态资源内容</li>
                 <li>初始请求资源gzip后总体积 <code>&lt; 50kb</code>
-                <li>静态资源(HTML/CSS/JS/IMAGE)是否优化压缩？</li>
+                <li>静态资源(HTML/CSS/JS/Image)是否优化压缩？</li>
                 <li>避免打包大型类库</li>
-                <li>确保接入层已开启Gzip压缩</li>
+                <li>确保接入层已开启Gzip压缩（考虑提升Gzip级别，使用CPU开销换取加载时间） <sup><span class="label label-danger">注意！</span></sup></li>
                 <li>尽量使用CSS3代替图片</li>
-                <li>初始首屏之外的图片资源需延迟加载 <sup><span class="label label-danger">注意！</span></sup></li>
+                <li>初始首屏之外的静态资源（JS/CSS）延迟加载 <sup><span class="label label-danger">注意！</span></sup></li>
+                <li>初始首屏之外的图片资源按需加载（判断可视区域） <sup><span class="label label-danger">注意！</span></sup></li>
                 <li>单页面应用(SPA)考虑延迟加载非首屏业务模块</li>
+                <li>开启Keep-Alive链路复用</li>
             </ul>
             <p>运行性能优化, 达到操作足够流畅</p>
             <ul>
                 <li>避免 iOS 300+ms 点击延时问题 <sup><span class="label label-danger">注意！</span></sup></li>
                 <li>缓存 DOM 选择与计算</li>
                 <li>避免触发页面重绘的操作</li>
-                <li>Debounce连续触发的事件(scroll/resize)，避免高频繁触发执行</li>
+                <li>Debounce连续触发的事件(scroll / resize / touchmove等)，避免高频繁触发执行 <sup><span class="label label-danger">注意！</span></sup></li>
                 <li>尽可能使用事件代理，避免批量绑定事件</li>
                 <li>使用CSS3动画代替JS动画</li>
                 <li>避免在低端机上使用大量CSS3渐变阴影效果，可考虑降级效果来提升流畅度</li>
-                <li>HTML结构层级保持足够简单，推荐不超过 5 个层级</li>
+                <li>HTML结构层级保持足够简单</li>
                 <li>尽能少的使用CSS高级选择器与通配选择器</li>
                 <li>Keep it simple</li>
             </ul>
