@@ -2,11 +2,34 @@ title: Pro &middot; Demo
 ---
 
 <link rel="stylesheet" href="css/pro.css" />
-
 <link rel="stylesheet" href="/Spirit/css/prism.css" />
 
 <script src="./vendor/zeptojs/zepto.js"></script>
-<script data-main="./js/main.js" src="vendor/requirejs/require.js"></script>
+
+<script>
+    Zepto.env = {};
+    $.emptyFunction = Zepto.emptyFunction = function () {console.log('emptyFunction')};
+</script>
+
+<script src="./js/core.js"></script>
+<script src="./js/action-sheet.js"></script>
+<!--<script src="./js/bouncefix.js"></script>-->
+<!--<script src="./js/carousel.js"></script>-->
+<script src="./js/dialog.js"></script>
+<script src="./js/dot.js"></script>
+<script src="./js/lazyload.js"></script>
+<!--<script src="./js/loading.js"></script>-->
+<script src="./js/mask.js"></script>
+<!--<script src="./js/mult-selector.js"></script>-->
+<script src="./js/page-loading.js"></script>
+<script src="./js/rich-loading.js"></script>
+<script src="./js/scrollTo.js"></script>
+<script src="./js/state.js"></script>
+<script src="./js/tab.js"></script>
+<script src="./js/text-loading.js"></script>
+<script src="./js/toast.js"></script>
+
+
 
 <section id="pro" class="container row">
 
@@ -14,7 +37,7 @@ title: Pro &middot; Demo
         <div id="sidebar" class="my_sidebar">
             <ul class="nav">
                 <li class="sidebar_head_li"><a href="#buttons">Buttons</a></li>
-                
+
             </ul>
         </div>
     </div>
@@ -54,8 +77,8 @@ title: Pro &middot; Demo
                 </a>
             </div>
         </div>
-    
-        
+
+
         <div class="section">
             <h3 id="block-buttons">Block Buttons</h3>
             <div class="demo_block">
@@ -71,7 +94,7 @@ title: Pro &middot; Demo
                 </a>
             </div>
         </div>
-        
+
         <div class="section">
             <h2 id="layout">layout</h2>
             <p>ddddddd</p>
@@ -83,14 +106,14 @@ title: Pro &middot; Demo
                </div>
             </div>
         </div>
-        
+
 
         <div class="section">
             <h2 id="icon">icon</h2>
-            <p>ddddddd</p> 
+            <p>ddddddd</p>
             <div class="demo_block">
                 <div class="ui-icon">
-                    <span class="ui-bg-default"></span>                   
+                    <span class="ui-bg-default"></span>
                </div>
                <div class="ui-bg-shop"></div>
                <div class="ui-icon-arrow"></div>
@@ -117,62 +140,51 @@ title: Pro &middot; Demo
                </div>
             </div>
         </div>
-        
+
         <div class="section">
             <h2 id="dot">dot</h2>
-            <p>ddddddd</p>
+            <p>11111</p>
             <div class="demo_block">
-               <div class="ui-dot-normal"></div>
-               <div class="ui-dot-num"></div>
-               <div class="ui-dot-new"></div>
-               <div class="ui-dot-tr"></div>
-               <div class="ui-dot-small"></div>
-               <div class="ui-dot-red"></div>
-               <div class="ui-dot-blue"></div>
+
+               <div class="ui-dot-normal">normal</div>
+               <div class="ui-dot-num">num</div>
+               <div class="ui-dot-new">3</div>
+
+               <div class="ui-dot-tr">tr</div>
+               <div class="ui-dot-small">small</div>
+               <div class="ui-dot-red">red</div>
+               <div class="ui-dot-blue">blue</div>
             </div>
-            <script>
-                // pro.createWidget( 'Dot', {
-                //     options: {
-                //         type: 'normal',   // normal, new, num => 对应 dot.css 中 - .ui-dot-normal/.ui-dot-num/.ui-dot-new
-                //         color: 'red',     // red 或 blue => .ui-dot-red/.ui-dot-blue
-                //         content: '',      // New红点和数字红点需要指定content
-                //         css: null         // 样式，可以自由控制红点的位置和大小，默认红点在容器的右上角
-                //     },
-                //     tpl: '<div></div>',   // 组件模板
-
-                //     // 覆写渲染函数
-                //     _render: function(){
-                //         var options = this.options;
-                        
-                //         this.$el.removeClass().addClass('ui-dot-' + options.type + ' ' + 'ui-dot-' + options.color).text(options.content);
-
-                //         if(options.css){
-                //             this.$el.css(options.css);
-                //         }else{
-                //             this.$el.addClass('ui-dot-tr');     // 位置默认在容器的右上角
-                //         }
-                //     }
-                // });
-            </script>
         </div>
-      
+
         <div class="section">
             <h2 id="dialog">dialog</h2>
-            <p>ddddddd</p>
+            <p>222</p>
             <div class="demo_block">
-               <div class="ui-dialog">
-                   <h5 class="title">标题</h5>
-                   <div class="body">主体</div>
-                   <div class="content">内容</div>
-                   <a class="btn">按钮</a>
-                   <div class="btns">
-                        <a class="btn">按钮</a>
-                        <a class="btn">按钮</a>
-                   </div>
-               </div>
+
             </div>
+            <script>
+                var cancleFunc = function () {
+                    alert('哇哦，真的不喜欢我？');
+                };
+                var confirmFunc = function () {
+                    alert('哇哦，我也喜欢你！');
+                };
+                var opts = {
+                    mask: true,
+                    animation: true,
+                    tapHide: true,
+                    preventScroll: true,
+                    title: '提示',
+                    content: '你喜欢我么？',
+                    btnText: ['不喜欢', '超喜欢'],
+                    btnHandle: [cancleFunc, confirmFunc]
+                };
+                pro.dialog.show();
+                // btnHandle 里的函数未执行，因为没有挂载 $btn.active() 函数
+            </script>
         </div>
-        
+
         <div class="section">
             <h2 id="action-sheet">action-sheet</h2>
             <p>ddddddd</p>
@@ -183,9 +195,9 @@ title: Pro &middot; Demo
                    <a class="btn">按钮</a>
                    <a class="btn-cancel">按钮</a>
                 </div>
-            </div> 
+            </div>
         </div>
-    
+
         <div class="section">
             <h2 id="xxxxx">xxxxx</h2>
             <p>ddddddd</p>
@@ -200,7 +212,7 @@ title: Pro &middot; Demo
                </div>
             </div>
         </div>
-        
+
         <div class="section">
             <h2 id="xxxxx">xxxxx</h2>
             <p>ddddddd</p>
@@ -208,7 +220,7 @@ title: Pro &middot; Demo
                // code
             </div>
         </div>
-        
+
     </div>
 </section>
 

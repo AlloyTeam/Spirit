@@ -73,7 +73,7 @@
 	}
 
     window.pro = {
-    	
+
     	// 创建组件
 	    createWidget: function ( name, object, isSingleton, superClass ) {
 	        if ( !$.isFunction(superClass) ) {
@@ -99,7 +99,7 @@
 	        }else {
 	        	pro[ name ] = subClass;
 	        	zeptolize( name );
-	        } 
+	        }
 
 	        return subClass;
 	    }
@@ -123,7 +123,7 @@
     		this.options = $.extend( {}, this.options, opts );
 
             if(opts && opts.$el){
-                //处理已有内容的类型，不需要调用show方法来绑定事件，如Tab 
+                //处理已有内容的类型，不需要调用show方法来绑定事件，如Tab
                 /* this.$el = typeof opts.$el === 'string' ? $(opts.$el) : opts.$el; */
                 this.$el = $(opts.$el, this.$container);
 
