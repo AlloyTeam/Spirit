@@ -1,1674 +1,241 @@
 title: Pro &middot; Demo
 ---
 
-<!-- TODO Pro CSS 合并-->
-<link rel="stylesheet" href="css/jmui/mui-base.css" />
-<link rel="stylesheet" href="css/jmui/mui-swipechange.css" />
-<link rel="stylesheet" href="css/jmui/mui-toolbar.css" />
-<!-- <link rel="stylesheet" href="./css/jmui/mui-button.css" /> -->
-<link rel="stylesheet" href="css/jmui/mui-buttons-new.css" />
-<link rel="stylesheet" href="css/jmui/mui-checkbox.css" />
-<link rel="stylesheet" href="css/jmui/mui-input.css" />
-<link rel="stylesheet" href="css/jmui/mui-radio.css" />
-<link rel="stylesheet" href="css/jmui/mui-list.css" />
-<link rel="stylesheet" href="css/jmui/mui-dialog.css" />
-<link rel="stylesheet" href="css/jmui/mui-slider.css" />
-<link rel="stylesheet" href="css/jmui/mui-toggleswitch.css" />
-<link rel="stylesheet" href="css/jmui/mui-progress.css" />
-<link rel="stylesheet" href="css/jmui/mui-select.css" />
-<link rel="stylesheet" href="css/jmui/mui-imageswitch.css" />
-<link rel="stylesheet" href="css/jmui/mui-toolbar.css" />
-<link rel="stylesheet" href="css/jmui/mui-tab.css" />
+<link rel="stylesheet" href="css/pro.css" />
 
 <link rel="stylesheet" href="/Spirit/css/prism.css" />
-<link rel="stylesheet" href="css/main.css" />
 
-<section id="jm" class="container row">
+<script src="./vendor/zeptojs/zepto.js"></script>
+<script data-main="./js/main.js" src="vendor/requirejs/require.js"></script>
+
+<section id="pro" class="container row">
 
     <div class="col-md-3">
         <div id="sidebar" class="my_sidebar">
             <ul class="nav">
                 <li class="sidebar_head_li"><a href="#buttons">Buttons</a></li>
-                <li class="sidebar_head_li"><a href="#checkboxes">Checkboxes</a></li>
-                <li class="sidebar_head_li"><a href="#radios">Radio</a></li>
-                <li class="sidebar_head_li"><a href="#progress">Progress</a></li>
-                <li class="sidebar_head_li"><a href="#text-input">Text Input</a></li>
-                <li class="sidebar_head_li"><a href="#toggle-switch">Toggle Switch</a></li>
-                <li class="sidebar_head_li"><a href="#image-switch">Image Switch</a></li>
-                <li class="sidebar_head_li"><a href="#select">Select</a></li>
-                <li class="sidebar_head_li"><a href="#slider-block">Slider</a></li>
-                <li class="sidebar_head_li"><a href="#dialog-block">Dialog</a></li>
-                <li class="sidebar_head_li"><a href="#toolbar">ToolBar</a></li>
-                <li class="sidebar_head_li"><a href="#list-groupList">List and GroupList</a></li>
-                <li class="sidebar_head_li"><a href="#tab">Tab</a></li>
-                <li class="sidebar_head_li"><a href="#swipe_change">拖动切换(完善中...)</a></li>
-                <li class="sidebar_head_li"><a href="#gesture">手势判断(完善中...)</a></li>
+                
             </ul>
         </div>
     </div>
 
     <div class="col-md-9">
-        <h2 id="buttons">Buttons</h2>
-        <p>JMUI提供了基础样式，使用下面的class，可以快速的建立带有样式的按钮。</p>
-        <div class="panel-group" id="buttons-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <a class="btn btn-primary">我知道了</a>
-                        <a class="btn btn-primary btn-disabled">我知道了</a>
 
-                        <a class="btn btn-danger">取消设置</a>
-                        <a class="btn btn-danger btn-disabled">取消设置</a>
-
-                        <a class="btn btn-info">消息设置</a>
-                        <a class="btn btn-info btn-disabled">消息设置</a>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#buttons-demo" href="#buttons-markup">
-                            HTML(点击伸缩代码)
-                        </a>
-                    </h4>
-                </div>
-                <div id="buttons-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;a class="btn btn-primary"&gt;我知道了&lt;/a&gt;
-&lt;a class="btn btn-primary btn-disabled"&gt;我知道了&lt;/a&gt;
-
-&lt;a class="btn btn-danger"&gt;取消设置&lt;/a&gt;
-&lt;a class="btn btn-danger btn-disabled"&gt;取消设置&lt;/a&gt;
-
-&lt;a class="btn btn-info"&gt;消息设置&lt;/a&gt;
-&lt;a class="btn btn-info btn-disabled"&gt;消息设置&lt;/a&gt;</code></pre>
-                    </div>
-                </div>
+        <div  id="base" class="section">
+            <h2>base</h2>
+            <p>提供一些基础样式</p>
+            <div class="demo_block">
+               <div class="ui-clear-fix">清楚浮动</div>
+               <div class="ui-border-1px">1px边框</div>
+               <p class="ui-no-wrap">单行文字超长显示省略号</p>
+               <p class="ui-multi-no-wrap">多行文字超长显示省略号</p>
+               <p class="ui-color-black">黑色</p>
+               <p class="ui-color-white">白色</p>
+               <p class="ui-color-gray">灰色</p>
+               <p class="ui-color-blue">蓝色</p>
+               <p class="ui-color-red">红色</p>
+               <p class="ui-color-orange">橙色</p>
             </div>
         </div>
 
-        <h3 id="block-buttons">Block Buttons</h3>
-        <div class="panel-group" id="block-buttons-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <a class="btn btn-primary btn-block">立即启用</a>
-                        <a class="btn btn-danger btn-block">退出登录</a>
-                        <a class="btn btn-info btn-block">编辑资料</a>
-                    </div>
-                </div>
+        <div class="section">
+            <h2 id="buttons">Buttons</h2>
+            <p>ProUI提供了基础样式，使用下面的class，可以快速的建立带有样式的按钮。</p>
+            <div class="demo_block">
+                <a class="ui-btn ui-btn-white">白色按钮</a>
+                <a class="ui-btn ui-btn-red">红色按钮</a>
+                <a class="ui-btn ui-btn-blue">蓝色按钮</a>
+                <a class="ui-btn ui-btn-orange">橙色按钮</a>
+                <a class="ui-btn" disable>禁用按钮</a>
+
+                <a class="ui-btn ui-btn-orange">
+                    <span class="icon">123</span>
+                    <span class="text">按钮中含图案和文字</span>
+                </a>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#block-buttons-demo" href="#block-buttons-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="block-buttons-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;a class="btn btn-primary btn-block"&gt;立即启用&lt;/a&gt;
-&lt;a class="btn btn-danger btn-block"&gt;退出登录&lt;/a&gt;
-&lt;a class="btn btn-info btn-block"&gt;编辑资料&lt;/a&gt;</code></pre>
-                    </div>
-                </div>
+        </div>
+    
+        
+        <div class="section">
+            <h3 id="block-buttons">Block Buttons</h3>
+            <div class="demo_block">
+                <a class="ui-btn-block ui-btn-white">白色按钮</a>
+                <a class="ui-btn-block ui-btn-red">红色按钮</a>
+                <a class="ui-btn-block ui-btn-blue">蓝色按钮</a>
+                <a class="ui-btn-block ui-btn-orange">橙色按钮</a>
+                <a class="ui-btn-block" disable>禁用按钮</a>
+
+                <a class="ui-btn-block ui-btn-orange">
+                    <span class="icon">123</span>
+                    <span class="text">按钮中含图案和文字</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 id="layout">layout</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+               <div class="ui-app">
+                   <div class="ui-header">固定的头部</div>
+                   <div class="ui-content-container">内容</div>
+                   <div class="ui-footer">固定的尾部</div>
+               </div>
+            </div>
+        </div>
+        
+
+        <div class="section">
+            <h2 id="icon">icon</h2>
+            <p>ddddddd</p> 
+            <div class="demo_block">
+                <div class="ui-icon">
+                    <span class="ui-bg-default"></span>                   
+               </div>
+               <div class="ui-bg-shop"></div>
+               <div class="ui-icon-arrow"></div>
+               <div class="ui-icon-arrow ui-icon-big"></div>
+               <div class="ui-icon-arrow ui-icon-down"></div>
             </div>
         </div>
 
-        <!--<h3 id="button-groups">Button Groups</h3>
-        <div class="panel-group" id="button-groups-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#button-groups-demo" href="#button-groups-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="button-groups-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;div id="w_v_btn_list" class="btn_group vertical"&gt;
-    &lt;button class="btn btn_white"&gt;&lt;span class="btn_text"&gt;1&lt;/span&gt;&lt;/button&gt;
-    &lt;button class="btn btn_white"&gt;&lt;span class="btn_text"&gt;2&lt;/span&gt;&lt;/button&gt;
-    &lt;button class="btn btn_white"&gt;&lt;span class="btn_text"&gt;3&lt;/span&gt;&lt;/button&gt;
-&lt;/div&gt;
-&lt;div id="b_v_btn_list" class="btn_group vertical" style="width:150px;float:left;"&gt;
-    &lt;button class="btn btn_black"&gt;&lt;span class="btn_text"&gt;1&lt;/span&gt;&lt;/button&gt;
-    &lt;button class="btn btn_black"&gt;&lt;span class="btn_text"&gt;2&lt;/span&gt;&lt;/button&gt;
-    &lt;button class="btn btn_black"&gt;&lt;span class="btn_text"&gt;3&lt;/span&gt;&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <p>它还需要一些额外的js</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#button-groups-demo" href="#button-groups-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="button-groups-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>//it needs js
-var b_btn_list = new MUI.ButtonList({
-    id:"b_v_btn_list"
-});
-var w_btn_list = new MUI.ButtonList({
-    id:"w_v_btn_list"
-});</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-
-        <h2 id="checkboxes">Checkboxes</h2>
-        <div class="panel-group" id="checkboxes-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <label id="checkbox" class="checkbox checkbox_white" for="cb0" style="margin:20px 0;">
-                            <input id="cb0" name="cb0" type="checkbox" />
-                            <span class="checkbox_text">0</span>
-                        </label>
-
-                        <fieldset id="bl_checkboxlist" class="checkbox_group">
-                            <label class="checkbox checkbox_black" for="cb11">
-                                <input id="cb11" name="cb11" type="checkbox" />
-                                <span class="checkbox_text">1</span>
-                            </label>
-                            <!-- bootstrap 的样式影响了，这里要强制margin-top回来-->
-                            <label class="checkbox checkbox_black" for="cb12" style="margin-top: 10px;">
-                                <input id="cb12" name="cb12" type="checkbox" />
-                                <span class="checkbox_text">2</span>
-                            </label>
-
-                            <label class="checkbox checkbox_black" for="cb13" style="margin-top: 10px;">
-                                <input id="cb13" name="cb13" type="checkbox" />
-                                <span class="checkbox_text">3</span>
-                            </label>
-                        </fieldset>
-
-
-                        <fieldset id="v_checkboxlist" class="checkbox_group vertical">
-                            <label class="checkbox checkbox_white" for="cb4">
-                                <input id="cb4" name="cb4" type="checkbox" />
-                                <span class="checkbox_icon"></span>
-                                <span class="checkbox_text">1</span>
-                            </label>
-
-                            <label class="checkbox checkbox_white" for="cb5">
-                                <input id="cb5" name="cb5" type="checkbox" />
-                                <span class="checkbox_icon"></span>
-                                <span class="checkbox_text">2</span>
-                            </label>
-
-                            <label class="checkbox checkbox_white" for="cb6">
-                                <input id="cb6" name="cb6" type="checkbox" />
-                                <span class="checkbox_icon"></span>
-                                <span class="checkbox_text">3</span>
-                            </label>
-                        </fieldset>
-
-                        <fieldset id="bl_v_checkboxlist" class="checkbox_group vertical">
-                            <label class="checkbox checkbox_black" for="cb14">
-                                <input id="cb14" name="cb14" type="checkbox" />
-                                <span class="checkbox_icon"></span>
-                                <span class="checkbox_text">1</span>
-                            </label>
-
-                            <label class="checkbox checkbox_black" for="cb15">
-                                <input id="cb15" name="cb15" type="checkbox" />
-                                <span class="checkbox_icon"></span>
-                                <span class="checkbox_text">2</span>
-                            </label>
-
-                            <label class="checkbox checkbox_black" for="cb16">
-                                <input id="cb16" name="cb16" type="checkbox" />
-                                <span class="checkbox_icon"></span>
-                                <span class="checkbox_text">3</span>
-                            </label>
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#checkboxes-demo" href="#checkboxes-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="checkboxes-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;label id="checkbox" class="checkbox checkbox_white" for="cb0" style="margin:20px 0;"&gt;
-    &lt;input id="cb0" name="cb0" type="checkbox" /&gt;
-    &lt;span class="checkbox_text"&gt;0&lt;/span&gt;
-&lt;/label&gt;
-
-&lt;fieldset id="bl_checkboxlist" class="checkbox_group"&gt;
-    &lt;label class="checkbox checkbox_black" for="cb11"&gt;
-        &lt;input id="cb11" name="cb11" type="checkbox" /&gt;
-        &lt;span class="checkbox_text"&gt;1&lt;/span&gt;
-    &lt;/label&gt;
-
-    &lt;label class="checkbox checkbox_black" for="cb12"&gt;
-        &lt;input id="cb12" name="cb12" type="checkbox" /&gt;
-        &lt;span class="checkbox_text"&gt;2&lt;/span&gt;
-    &lt;/label&gt;
-
-    &lt;label class="checkbox checkbox_black" for="cb13"&gt;
-        &lt;input id="cb13" name="cb13" type="checkbox" /&gt;
-        &lt;span class="checkbox_text"&gt;3&lt;/span&gt;
-    &lt;/label&gt;
-&lt;/fieldset&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <p>它还需要一些额外的js</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#checkboxes-demo" href="#checkboxes-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="checkboxes-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>//checkbox
-var cb = new MUI.Checkbox({
-    id:"checkbox"
-});
-var bl_cb = new MUI.Checkbox({
-    id:"bl_checkbox"
-});
-
-var bl_cl = new MUI.CheckboxList({
-    id:"bl_checkboxlist"
-});
-var v_cl = new MUI.CheckboxList({
-    id:"v_checkboxlist"
-});
-var v_cl = new MUI.CheckboxList({
-    id:"bl_v_checkboxlist"
-});]</code></pre>
-                    </div>
-                </div>
+        <div class="section">
+            <h2 id="corner-tag">corner-tag</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+               <div class="ui-corner-tag">
+                   <div class="ui-tag-red"></div>
+               </div>
+               <div class="ui-corner-tag">
+                   <div class="ui-tag-orange"></div>
+               </div>
+               <div class="ui-corner-tag">
+                   <div class="ui-tag-blue"></div>
+               </div>
+               <div class="ui-corner-tag">
+                   <div class="ui-tag-green"></div>
+               </div>
             </div>
         </div>
-
-        <h2 id="radios">Radios</h2>
-        <div class="panel-group" id="radios-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <label id="bl_radio" for="radio21" class="radio radio_black" style="margin:20px 0;">
-                            <input id="radio21" type="radio" name="radio" value="0"/>
-                            <span class="radio_text">0</span>
-                        </label>
-
-                        <fieldset id="radioList" class="radio_group">
-                            <label for="radio1" class="radio radio_white">
-                                <input id="radio1" type="radio" name="radio" value="1"/>
-                                <span class="radio_text">1</span>
-                            </label>
-
-                            <label for="radio2" class="radio radio_white">
-                                <input id="radio2" type="radio" name="radio" value="2"/>
-                                <span class="radio_text">2</span>
-                            </label>
-
-                            <label for="radio3" class="radio radio_white">
-                                <input id="radio3" type="radio" name="radio" value="3"/>
-                                <span class="radio_text">3</span>
-                            </label>
-                        </fieldset>
-                        <fieldset id="v_radioList" class="radio_group vertical" style="margin-top:10px;">
-                            <label for="radio4" class="radio radio_white">
-                                <input id="radio4" type="radio" name="radio" value="4"/>
-                                <span class="radio_icon"></span>
-                                <span class="radio_text">4</span>
-                            </label>
-
-                            <label for="radio5" class="radio radio_white">
-                                <input id="radio5" type="radio" name="radio" value="5"/>
-                                <span class="radio_icon"></span>
-                                <span class="radio_text">5</span>
-                            </label>
-                            <label for="radio6" class="radio radio_white">
-                                <input id="radio6" type="radio" name="radio" value="6"/>
-                                <span class="radio_icon"></span>
-                                <span class="radio_text">6</span>
-                            </label>
-                        </fieldset>
-
-                        <fieldset id="v_bl_radioList" class="radio_group vertical" style="margin-top:10px;">
-                            <label for="radio24" class="radio radio_black">
-                                <input id="radio24" type="radio" name="radio" value="4"/>
-                                <span class="radio_icon"></span>
-                                <span class="radio_text">4</span>
-                            </label>
-
-                            <label for="radio25" class="radio radio_black">
-                                <input id="radio25" type="radio" name="radio" value="5"/>
-                                <span class="radio_icon"></span>
-                                <span class="radio_text">5</span>
-                            </label>
-
-                            <label for="radio26" class="radio radio_black">
-                                <input id="radio26" type="radio" name="radio" value="6"/>
-                                <span class="radio_icon"></span>
-                                <span class="radio_text">6</span>
-                            </label>
-                        </fieldset>
-                    </div>
-                </div>
+        
+        <div class="section">
+            <h2 id="dot">dot</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+               <div class="ui-dot-normal"></div>
+               <div class="ui-dot-num"></div>
+               <div class="ui-dot-new"></div>
+               <div class="ui-dot-tr"></div>
+               <div class="ui-dot-small"></div>
+               <div class="ui-dot-red"></div>
+               <div class="ui-dot-blue"></div>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#radios-demo" href="#radios-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="radios-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;label id="bl_radio" for="radio21" class="radio radio_black" style="margin:20px 0;"&gt;
-    &lt;input id="radio21" type="radio" name="radio" value="0"/&gt;
-    &lt;span class="radio_text"&gt;0&lt;/span&gt;
-&lt;/label&gt;
+            <script>
+                // pro.createWidget( 'Dot', {
+                //     options: {
+                //         type: 'normal',   // normal, new, num => 对应 dot.css 中 - .ui-dot-normal/.ui-dot-num/.ui-dot-new
+                //         color: 'red',     // red 或 blue => .ui-dot-red/.ui-dot-blue
+                //         content: '',      // New红点和数字红点需要指定content
+                //         css: null         // 样式，可以自由控制红点的位置和大小，默认红点在容器的右上角
+                //     },
+                //     tpl: '<div></div>',   // 组件模板
 
-&lt;fieldset id="radioList" class="radio_group"&gt;
-    &lt;label for="radio1" class="radio radio_white"&gt;
-        &lt;input id="radio1" type="radio" name="radio" value="1"/&gt;
-        &lt;span class="radio_text"&gt;1&lt;/span&gt;
-    &lt;/label&gt;
+                //     // 覆写渲染函数
+                //     _render: function(){
+                //         var options = this.options;
+                        
+                //         this.$el.removeClass().addClass('ui-dot-' + options.type + ' ' + 'ui-dot-' + options.color).text(options.content);
 
-    &lt;label for="radio2" class="radio radio_white"&gt;
-        &lt;input id="radio2" type="radio" name="radio" value="2"/&gt;
-        &lt;span class="radio_text"&gt;2&lt;/span&gt;
-    &lt;/label&gt;
-
-    &lt;label for="radio3" class="radio radio_white"&gt;
-        &lt;input id="radio3" type="radio" name="radio" value="3"/&gt;
-        &lt;span class="radio_text"&gt;3&lt;/span&gt;
-    &lt;/label&gt;
-&lt;/fieldset&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <p>同样的它需要少许js</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#radios-demo" href="#radios-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="radios-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>//radio
-var radio = new MUI.Radio({
-    id:"radio"
-});
-var bl_radio = new MUI.Radio({
-    id:"bl_radio"
-});
-var radiolist = new MUI.RadioList({
-    id:"radioList"
-});
-
-var v_radiolist = new MUI.RadioList({
-    id:"v_radioList"
-});
-var v_bl_radiolist = new MUI.RadioList({
-    id:"v_bl_radioList"
-});</code></pre>
-                    </div>
-                </div>
+                //         if(options.css){
+                //             this.$el.css(options.css);
+                //         }else{
+                //             this.$el.addClass('ui-dot-tr');     // 位置默认在容器的右上角
+                //         }
+                //     }
+                // });
+            </script>
+        </div>
+      
+        <div class="section">
+            <h2 id="dialog">dialog</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+               <div class="ui-dialog">
+                   <h5 class="title">标题</h5>
+                   <div class="body">主体</div>
+                   <div class="content">内容</div>
+                   <a class="btn">按钮</a>
+                   <div class="btns">
+                        <a class="btn">按钮</a>
+                        <a class="btn">按钮</a>
+                   </div>
+               </div>
             </div>
         </div>
-
-        <h2 id="progress">Progress</h2>
-        <div class="panel-group" id="progress-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
+        
+        <div class="section">
+            <h2 id="action-sheet">action-sheet</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+                <div class="ui-action-sheet">
+                   <h5 class="ui-actionsheet-title">标题</h5>
+                   <a class="ui-actionsheet-del"></a>
+                   <a class="btn">按钮</a>
+                   <a class="btn-cancel">按钮</a>
                 </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <div id="progress_gif" class="progress">
-                            <div class="progress_wrap">
-                                <span class="bar_text"></span>
-                                <div class="bar bar_image"></div>
-                            </div>
-                        </div>
-                        <div id="progress_g" class="progress" >
-                            <div class="progress_wrap">
-                                <span class="bar_text"></span>
-                                <div class="bar bar_green"></div>
-                            </div>
-                        </div>
-                        <div id="progress_b" class="progress" >
-                            <div class="progress_wrap">
-                                <span class="bar_text"></span>
-                                <div class="bar bar_blue"></div>
-                            </div>
-                        </div>
-                        <div id="progress_y" class="progress">
-                            <div class="progress_wrap">
-                                <span class="bar_text"></span>
-                                <div class="bar bar_yellow"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#progress-demo" href="#progress-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="progress-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;div id="progress" class="progress" style="margin-top:20px;"&gt;
-    &lt;div class="progress_wrap"&gt;
-        &lt;span class="bar_text"&gt;&lt;/span&gt;
-        &lt;div class="bar bar_image"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="progress_g" class="progress" &gt;
-    &lt;div class="progress_wrap"&gt;
-        &lt;span class="bar_text"&gt;&lt;/span&gt;
-        &lt;div class="bar bar_green"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="progress_b" class="progress" &gt;
-    &lt;div class="progress_wrap"&gt;
-        &lt;span class="bar_text"&gt;&lt;/span&gt;
-        &lt;div class="bar bar_blue"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="progress_y" class="progress"&gt;
-    &lt;div class="progress_wrap"&gt;
-        &lt;span class="bar_text"&gt;&lt;/span&gt;
-        &lt;div class="bar bar_yellow"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <p>同样的它需要少许js</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#progress-demo" href="#progress-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="progress-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>//progress
-var p = new MUI.Progress({
-    id:"progress",
-percent:30
-});
-var p_g = new MUI.Progress({
-    id:"progress_g",
-percent:60
-});
-var p_b = new MUI.Progress({
-    id:"progress_b",
-percent:90
-});
-var p_y = new MUI.Progress({
-    id:"progress_y",
-    percent:100
-});</code></pre>
-                    </div>
-                </div>
+            </div> 
+        </div>
+    
+        <div class="section">
+            <h2 id="xxxxx">xxxxx</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+               <div class="ui-form-wrapper">
+                   <h5 class="title">标题</h5>
+                   <form action="" class="ui-form">
+                       <div class="item">
+                           <input type="text" class="content">
+                       </div>
+                   </form>
+               </div>
             </div>
         </div>
-
-        <h2 id="text-input">Text Input</h2>
-        <p>在移动上的文本输入框总会带来麻烦，我们提供自增高的input可以帮助你完成实际的项目需要，同时帮你减少在移动上遇到的坑。</p>
-        <div class="panel-group" id="text-input-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <p>
-                            <input type="text" class="input input_white" placeholder="text input" style="margin-top:20px;"></input>
-                            <textarea id="autoGrowTextArea" class="input input_white" placeholder="textarea" style="margin-top:10px;"></textarea>
-                        </p>
-                        <p>
-                            <div class="input_group" style="margin-top:10px;">
-                                <input type="text" class="input input_white" placeholder="text input"></input>
-                                <input type="text" class="input input_white" placeholder="text input"></input>
-                                <input type="text" class="input input_white" placeholder="text input"></input>
-                            </div>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#text-input-demo" href="#text-input-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="text-input-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;p&gt;
-    &lt;input type="text" class="input input_white" placeholder="text input" style="margin-top:20px;"&gt;&lt;/input&gt;
-    &lt;textarea id="textarea" class="input input_white" placeholder="textarea" style="margin-top:10px;"&gt;&lt;/textarea&gt;
-&lt;/p&gt;
-&lt;p&gt;
-    &lt;div class="input_group" style="margin-top:10px;"&gt;
-        &lt;input type="text" class="input input_white" placeholder="text input"&gt;&lt;/input&gt;
-        &lt;input type="text" class="input input_white" placeholder="text input"&gt;&lt;/input&gt;
-        &lt;input type="text" class="input input_white" placeholder="text input"&gt;&lt;/input&gt;
-    &lt;/div&gt;
-&lt;/p&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <p>自增高input需要额外的js</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#text-input-demo" href="#text-input-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="text-input-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>var autoGrowTextArea = new MUI.AutoGrowTextarea({
-    id:"autoGrowTextArea"
-});</code></pre>
-                    </div>
-                </div>
+        
+        <div class="section">
+            <h2 id="xxxxx">xxxxx</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+               // code
             </div>
         </div>
-
-        <h2 id="toggle-switch">Toggle Switch</h2>
-        <div class="panel-group" id="toggle-switch-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <div id="toggleSwitch" class="toggle_switch">
-                            <div class="toggle_wrap">
-                                <div class="toggle_text">
-                                    <span class="toggle_text_blue">on</span>
-                                    <span class="toggle_text_white">off</span>
-                                </div>
-                                <a class="toggle_handler toggle_handler_white"></a>
-                            </div>
-                        </div>
-                        <div id="bl_toggleSwitch" class="toggle_switch" style="display:block;margin-top:30px;">
-                            <div class="toggle_wrap">
-                                <div class="toggle_text">
-                                    <span class="toggle_text_blue">on</span>
-                                    <span class="toggle_text_black">off</span>
-                                </div>
-                                <a class="toggle_handler toggle_handler_black"></a>
-                            </div>
-                        </div>
-                        <div id="b_toggleSwitch" class="toggle_switch" style="display:block;margin-top:30px;">
-                            <div class="toggle_wrap">
-                                <div class="toggle_text">
-                                    <span class="toggle_text_blue">on</span>
-                                    <span class="toggle_text_deepblue">off</span>
-                                </div>
-                                <a class="toggle_handler toggle_handler_blue"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#toggle-switch-demo" href="#toggle-switch-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="toggle-switch-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;div id="toggleSwitch" class="toggle_switch" style="display:block;margin-top:20px;"&gt;
-    &lt;div class="toggle_wrap"&gt;
-        &lt;div class="toggle_text"&gt;
-            &lt;span class="toggle_text_blue"&gt;on&lt;/span&gt;
-            &lt;span class="toggle_text_white"&gt;off&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;a class="toggle_handler toggle_handler_white"&gt;&lt;/a&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;div id="bl_toggleSwitch" class="toggle_switch" style="display:block;margin-top:30px;"&gt;
-    &lt;div class="toggle_wrap"&gt;
-        &lt;div class="toggle_text"&gt;
-            &lt;span class="toggle_text_blue"&gt;on&lt;/span&gt;
-            &lt;span class="toggle_text_black"&gt;off&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;a class="toggle_handler toggle_handler_black"&gt;&lt;/a&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <p>同样的它需要少许js</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#toggle-switch-demo" href="#toggle-switch-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="toggle-switch-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>//toggleSwitch
-var ts = new MUI.ToggleSwitch({
-    id:"toggleSwitch"
-});
-var bl_ts = new MUI.ToggleSwitch({
-    id:"bl_toggleSwitch"
-});
-var b_ts = new MUI.ToggleSwitch({
-    id:"b_toggleSwitch"
-});</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="image-switch">Image Switch</h2>
-        <div class="panel-group" id="image-switch-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <div id='image_slider' class='imagechange' style="margin-top:20px;">
-                            <div class="wrap">
-                                <div>
-                                    <img src="http://www.cnblogs.com/images/cnblogs_com/Cson/290336/t_3a.jpg">
-                                </div>
-                                <div>
-                                    <img src="http://www.cnblogs.com/images/cnblogs_com/Cson/290336/t_436d106e37b424ba42169473.jpg">
-                                </div>
-                                <div>
-                                    <img src="http://www.cnblogs.com/images/cnblogs_com/Cson/290336/t_6a.jpg">
-                                </div>
-                                <div>
-                                    <img src="http://www.cnblogs.com/images/cnblogs_com/Cson/290336/t_10a.jpg">
-                                </div>
-                                <div>
-                                    <img src="http://www.cnblogs.com/images/cnblogs_com/Cson/290336/t_1a.jpg">
-                                </div>
-                            </div>
-                            <ul class="btnsWrap">
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#image-switch-demo" href="#image-switch-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="image-switch-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;div id='image_slider' class='imagechange' style="margin-top:20px;"&gt;
-    &lt;div class="wrap"&gt;
-        &lt;div&gt;
-            &lt;img src="http://www.cnblogs.com/images/cnblogs_com/Cson/290336/t_3a.jpg"&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            &lt;img src="http://www.cnblogs.com/images/cnblogs_com/Cson/290336/t_436d106e37b424ba42169473.jpg"&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            &lt;img src="http://www.cnblogs.com/images/cnblogs_com/Cson/290336/t_6a.jpg"&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            &lt;img src="http://www.cnblogs.com/images/cnblogs_com/Cson/290336/t_10a.jpg"&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            &lt;img src="http://www.cnblogs.com/images/cnblogs_com/Cson/290336/t_1a.jpg"&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;ul class="btnsWrap"&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <p>同样的它需要少许js</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#image-switch-demo" href="#image-switch-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="image-switch-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>//imagechange
-var ic = new MUI.ImageChange({
-    id:"image_slider",
-    isAutoChange:true,
-    autoChangeTime:3000,
-    canSwipe:true
-});</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="select">Select</h2>
-        <div class="panel-group" id="select-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <div id="w_menuSelector" class="select select_white" style="margin-top:20px;">
-                            <span class="select_text"></span>
-                            <select>
-                                <option>option1</option>
-                                <option>option2</option>
-                            </select>
-                        </div>
-                        <div id="g_menuSelector" class="select select_green" style="margin-top:20px;">
-                            <span class="select_text"></span>
-                            <select>
-                                <option>option1</option>
-                                <option>option2</option>
-                            </select>
-                        </div>
-
-
-                        <div id="bl_menuSelector" class="select select_black" style="margin-top:20px;">
-                            <span class="select_text"></span>
-                            <select>
-                                <option>option1</option>
-                                <option>option2</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#select-demo" href="#select-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="select-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;div id="g_menuSelector" class="select select_green" style="margin-top:20px;"&gt;
-    &lt;span class="select_text"&gt;&lt;/span&gt;
-    &lt;select&gt;
-        &lt;option&gt;option1&lt;/option&gt;
-        &lt;option&gt;option2&lt;/option&gt;
-    &lt;/select&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <p>同样的它需要少许js</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#select-demo" href="#select-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="select-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>var g_sel = new MUI.Select({
-    id:"g_menuSelector"
-});</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="slider-block">Slider</h2>
-        <div class="panel-group" id="slider-block-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <div class="spanhalf" style="width:300px; display:inline-block;">
-                            <div id="slider" class="slider slider_white" style="margin-top:20px;">
-                                <input type="range" />
-                                <a class="slider_handler"></a>
-                            </div>
-                            <div id="w_slider" class="slider slider_white" style="margin-top:30px;">
-                                <input type="range" />
-                                <div class="slider_range white"></div>
-                                <a class="slider_handler"></a>
-                            </div>
-                            <div id="b_slider" class="slider slider_white" style="margin-top:30px;">
-                                <input type="range" />
-                                <div class="slider_range blue"></div>
-                                <a class="slider_handler"></a>
-                            </div>
-                            <div id="g_slider" class="slider slider_white" style="margin-top:30px;">
-                                <input type="range" />
-                                <div class="slider_range green"></div>
-                                <a class="slider_handler"></a>
-                            </div>
-                        </div>
-                        <div class="spanhalf" style="margin-left:40px; display:inline-block;" >
-                            <div id="v_slider" class="slider slider_white vertical" style="float:left;">
-                                <input type="range" />
-                                <a class="slider_handler"></a>
-                            </div>
-                            <div id="v_w_slider" class="slider slider_white vertical" style="margin-left:40px;float:left;">
-                                <input type="range" />
-                                <div class="slider_range white"></div>
-                                <a class="slider_handler"></a>
-                            </div>
-                            <div id="v_b_slider" class="slider slider_white vertical" style="margin-left:40px;float:left;">
-                                <input type="range" />
-                                <div class="slider_range blue"></div>
-                                <a class="slider_handler"></a>
-                            </div>
-                            <div id="v_g_slider" class="slider slider_white vertical" style="margin-left:40px;float:left;">
-                                <input type="range" />
-                                <div class="slider_range green"></div>
-                                <a class="slider_handler"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#slider-block-demo" href="#slider-block-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="slider-block-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;div id="slider" class="slider slider_white" style="margin-top:20px;"&gt;
-    &lt;input type="range" /&gt;
-    &lt;a class="slider_handler"&gt;&lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div id="v_slider" class="slider slider_white vertical" style="float:left;"&gt;
-    &lt;input type="range" /&gt;
-    &lt;a class="slider_handler"&gt;&lt;/a&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <p>同样的它需要少许js</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#slider-block-demo" href="#slider-block-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="slider-block-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>var sl = new MUI.Slider({
-    id:"slider"
-});
-
-var v_sl = new MUI.Slider({
-    id:"v_slider",
-    vertical:true
-});</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="dialog-block">Dialog</h2>
-        <p>Dialog我们做到尽量模拟原生态的移动弹出窗口形式</p>
-        <div class="panel-group" id="dialog-block-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <input id="none" type="button" value="none effect" class="dialogbtn">
-                        <input id="fade" type="button" value="fade effect" class="dialogbtn">
-                        <input id="pop" type="button" value="pop effect" class="dialogbtn">
-                        <input id="slideup" type="button" value="slide up effect" class="dialogbtn">
-                        <input id="slidedown" type="button" value="slide down effect" class="dialogbtn">
-                        <div class="row">
-                            <div class="mask" style="z-index: 1000;"></div>
-
-                            <div id="dialog" class="dialog" style="z-index: 1001;margin:0;">
-                                <div class="header">
-                                    <h4>Dialog Header</h4>
-                                </div>
-                                <div class="content">
-                                    <p style = "line-height:80px;text-align:center;font-size:36px;color:#333;cursor:pointer">
-                                    click me to hide
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#dialog-block-demo" href="#dialog-block-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="dialog-block-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;input id="none" type="button" value="none effect" class="dialogbtn"&gt;
-&lt;input id="fade" type="button" value="fade effect" class="dialogbtn"&gt;
-&lt;input id="pop" type="button" value="pop effect" class="dialogbtn"&gt;
-
-&lt;div class="row" style="height:0;"&gt;
-    &lt;div class="mask" style="z-index: 1000;"&gt;&lt;/div&gt;
-
-    &lt;div id="dialog" class="dialog" style="z-index: 1001;margin:0;left:23%;top:-300px;"&gt;
-        &lt;div class="header"&gt;
-            &lt;h4&gt;Dialog Header&lt;/h4&gt;
-        &lt;/div&gt;
-        &lt;div class="content"&gt;
-            &lt;p style = "line-height:80px;text-align:center;font-size:36px;color:#333;cursor:pointer"&gt;
-            click me to hide
-            &lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#dialog-block-demo" href="#dialog-block-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="dialog-block-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>//dialog
-var currentEffect,
-    currentDialogFlg;
-
-var dialog = new MUI.Dialog({
-    id:"dialog"
-});
-dialog.elem.onclick = function(){
-    dialog.hide(currentEffect);
-    currentDialogFlg = false;
-}
-
-$E.on($D.id("none"),"click",function(){
-    currentEffect = "none";
-    dialog.show("none");
-    currentDialogFlg = true;
-});
-$E.on($D.id("fade"),"click",function(){
-    currentEffect = "fade";
-    dialog.show("fade");
-    currentDialogFlg = true;
-});
-$E.on($D.id("pop"),"click",function(){
-    currentEffect = "pop";
-    dialog.show("pop");
-    currentDialogFlg = true;
-});</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="toolbar">ToolBar</h2>
-        <div class="panel-group" id="toolbar-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <div class="toolbar_header header_black">
-                            <h1 style="color:white;">header</h1>
-                        </div>
-                        <p>content</p>
-                        <p>content</p>
-                        <p>content</p>
-                        <div class="toolbar_footer footer_black">
-                            <h4 style="color:white;">footer</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#toolbar-demo" href="#toolbar-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="toolbar-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;div class="toolbar_header header_black"&gt;
-    &lt;h1 style="color:white;"&gt;header&lt;/h1&gt;
-&lt;/div&gt;
-&lt;p&gt;content&lt;/p&gt;
-&lt;p&gt;content&lt;/p&gt;
-&lt;p&gt;content&lt;/p&gt;
-&lt;div class="toolbar_footer footer_black"&gt;
-    &lt;h4 style="color:white;"&gt;footer&lt;/h4&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <h2 id="list-groupList">List and Group List</h2>
-        <div class="panel-group" id="list-groupList-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <ul id="r_icon_list" class="list list_white conner_round_vertical_group" style="margin-top:20px;">
-                            <li class="list_item">
-                            <span class="list_icon list_icon_right"></span>
-                            <a  class="list_text">ListItemA</a>
-                            </li>
-                            <li class="list_item">
-                            <span class="list_icon list_icon_right"></span>
-                            <a  class="list_text">ListItemB</a>
-                            </li>
-                            <li class="list_item">
-                            <span class="list_icon list_icon_right"></span>
-                            <a  class="list_text">ListItemC</a>
-                            </li>
-                        </ul>
-                        <ul id="list1" class="list list_white conner_round_vertical_group" style="margin-top:30px;">
-                            <li class="list_item">
-                            <a  class="list_text">ListItemA</a>
-                            </li>
-                            <li class="list_item">
-                            <a  class="list_text">ListItemB</a>
-                            </li>
-                            <li class="list_item">
-                            <a  class="list_text">ListItemC</a>
-                            </li>
-                        </ul>
-
-                        <ul id="groupList" class="group_list" style="margin-top:20px;">
-                            <li class="list_group">
-                            <div class="list_group_title list_group_blue_title">
-                                <h4>Group1</h4>
-                            </div>
-                            <div class="list_group_body">
-                                <ul class="list list_white">
-                                    <li class="list_item">
-                                    <a  class="list_text">ListItemA</a>
-                                    </li>
-                                    <li class="list_item">
-                                    <a  class="list_text">ListItemB</a>
-                                    </li>
-                                    <li class="list_item">
-                                    <a  class="list_text">ListItemC</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            </li>
-                            <li class="list_group">
-                            <div class="list_group_title list_group_blue_title">
-                                <h4>Group2</h4>
-                            </div>
-                            <div class="list_group_body">
-                                <ul class="list list_white">
-                                    <li class="list_item">
-                                    <a  class="list_text">ListItemA</a>
-                                    </li>
-                                    <li class="list_item">
-                                    <a  class="list_text">ListItemB</a>
-                                    </li>
-                                    <li class="list_item">
-                                    <a  class="list_text">ListItemC</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#list-groupList-demo" href="#list-groupList-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="list-groupList-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;ul id="list1" class="list list_white conner_round_vertical_group" style="margin-top:30px;"&gt;
-    &lt;li class="list_item"&gt;
-    &lt;a  class="list_text"&gt;ListItemA&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class="list_item"&gt;
-    &lt;a  class="list_text"&gt;ListItemB&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class="list_item"&gt;
-    &lt;a  class="list_text"&gt;ListItemC&lt;/a&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ul id="groupList" class="group_list" style="margin-top:20px;"&gt;
-    &lt;li class="list_group"&gt;
-    &lt;div class="list_group_title list_group_blue_title"&gt;
-        &lt;h4&gt;Group1&lt;/h4&gt;
-    &lt;/div&gt;
-    &lt;div class="list_group_body"&gt;
-        &lt;ul class="list list_white"&gt;
-            &lt;li class="list_item"&gt;
-            &lt;a  class="list_text"&gt;ListItemA&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class="list_item"&gt;
-            &lt;a  class="list_text"&gt;ListItemB&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class="list_item"&gt;
-            &lt;a  class="list_text"&gt;ListItemC&lt;/a&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li class="list_group"&gt;
-    &lt;div class="list_group_title list_group_blue_title"&gt;
-        &lt;h4&gt;Group2&lt;/h4&gt;
-    &lt;/div&gt;
-    &lt;div class="list_group_body"&gt;
-        &lt;ul class="list list_white"&gt;
-            &lt;li class="list_item"&gt;
-            &lt;a  class="list_text"&gt;ListItemA&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class="list_item"&gt;
-            &lt;a  class="list_text"&gt;ListItemB&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class="list_item"&gt;
-            &lt;a  class="list_text"&gt;ListItemC&lt;/a&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#list-groupList-demo" href="#list-groupList-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="list-groupList-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>//list
-var list1 = new MUI.List({
-    id:"list1"
-});
-
-var groupList = new MUI.GroupList({
-    id:"groupList"
-});</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="tab">Tab</h2>
-        <div class="panel-group" id="tab-demo">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Example
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="demo_block">
-                        <div id="a_tab" class="tab">
-                            <ul class="tab_head">
-                                <li class="active">head_1</li>
-                                <li>head_2</li>
-                                <li>head_3</li>
-                                <li>head_4</li>
-                            </ul>
-                            <ul class="tab_body">
-                                <li>
-                                    <div>tab-body-1</div>
-                                </li>
-                                <li>
-                                    <div>tab-body-2</div>
-                                </li>
-
-                                <li>
-                                    <div>tab-body-3</div>
-                                </li>
-                                <li>
-                                    <div>tab-body-4</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#tab-demo" href="#tab-markup">
-                            HTML
-                        </a>
-                    </h4>
-                </div>
-                <div id="tab-markup" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-markup"><code>&lt;div id="a_tab" class="tab"&gt;
-    &lt;ul class="tab_head"&gt;
-        &lt;li class="active"&gt;head_1&lt;/li&gt;
-        &lt;li&gt;head_2&lt;/li&gt;
-        &lt;li&gt;head_3&lt;/li&gt;
-        &lt;li&gt;head_4&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ul class="tab_body"&gt;
-        &lt;li&gt;
-            &lt;div&gt;tab-body-1&lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;div&gt;tab-body-2&lt;/div&gt;
-        &lt;/li&gt;
-
-        &lt;li&gt;
-            &lt;div&gt;tab-body-3&lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-            &lt;div&gt;tab-body-4&lt;/div&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#tab-demo" href="#tab-javascript">
-                            JavaScript
-                        </a>
-                    </h4>
-                </div>
-                <div id="tab-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <pre class="language-javascript"><code>var tb2 = new MUI.Tab({
-    id:"a_tab",
-    animate:"true"
-});</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 id="swipe_change">拖动切换</h2>
-        <div class="alert alert-warning">
-            <p>在完善中Demo，请点击 <a href="./swipe_change.html" target="_blank">Demo</a>页</p>
-        </div>
-        <h2 id="gesture">手势判断</h2>
-        <div class="alert alert-warning">
-            <p>在完善中Demo，请点击<a href="./gesture.html" target="_blank">Demo</a>页</p>
-        </div>
+        
     </div>
 </section>
 
-<script src="js/JM.js"></script>
+<script type="text/javascript" src="/Spirit/js/prism.js"></script>
 
-<!-- TODO JUMI js 合并 -->
-<script type="text/javascript" src="js/jmui/swipechange.js"></script>
-<script type="text/javascript" src="js/jmui/button.js"></script>
-<script type="text/javascript" src="js/jmui/buttonlist.js"></script>
-<script type="text/javascript" src="js/jmui/checkbox.js"></script>
-<script type="text/javascript" src="js/jmui/checkboxlist.js"></script>
-<script type="text/javascript" src="js/jmui/autogrow_textarea.js"></script>
-<script type="text/javascript" src="js/jmui/radio.js"></script>
-<script type="text/javascript" src="js/jmui/radiolist.js"></script>
-<script type="text/javascript" src="js/jmui/list.js"></script>
-<script type="text/javascript" src="js/jmui/grouplist.js"></script>
-<script type="text/javascript" src="js/jmui/dialog.js"></script>
-<script type="text/javascript" src="js/jmui/slider.js"></script>
-<script type="text/javascript" src="js/jmui/toggleswitch.js"></script>
-<script type="text/javascript" src="js/jmui/progress.js"></script>
-<script type="text/javascript" src="js/jmui/select.js"></script>
-<script type="text/javascript" src="js/jmui/imagechange.js"></script>
-<script type="text/javascript" src="js/jmui/tab.js"></script>
+<textarea id="tpl-panel" class="hide">
+    <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        Example
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    // code here
+            </div>
+        </div>
+</textarea>
 
 <script>
-$(function(){
+    Zepto(function ($) {
+        $('.section').each(function (index, item) {
+            var content = $(this).find('.demo_block');
+            var tpl = $($('#tpl-panel').val());
 
-    // back to top
-    setTimeout(function () {
-      var $sideBar = $('.my_sidebar')
-
-      $sideBar.affix({
-        offset: {
-          top: function () {
-            var offsetTop      = $sideBar.offset().top
-            var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
-            var navOuterHeight = $('#header').height()
-
-            return (this.top = offsetTop - navOuterHeight - sideBarMargin)
-          }
-        , bottom: function () {
-            return (this.bottom = $('.footer').outerHeight(true))
-          }
-        }
-      })
-    }, 100)
-
-    //button group
-    var b_btn_list = new MUI.ButtonList({
-        id:"b_v_btn_list"
-    });
-    var w_btn_list = new MUI.ButtonList({
-        id:"w_v_btn_list"
-    });
-
-    //checkbox
-    var cb = new MUI.Checkbox({
-    id:"checkbox"
-    });
-    var bl_cb = new MUI.Checkbox({
-    id:"bl_checkbox"
-    });
-
-    var bl_cl = new MUI.CheckboxList({
-    id:"bl_checkboxlist"
-    });
-    var v_cl = new MUI.CheckboxList({
-    id:"v_checkboxlist"
-    });
-    var v_cl = new MUI.CheckboxList({
-    id:"bl_v_checkboxlist"
-    });
-
-
-    //input
-    var autoGrowTextArea = new MUI.AutoGrowTextarea({
-        id:"autoGrowTextArea"
-    });
-
-    //radio
-    var radio = new MUI.Radio({
-    id:"radio"
-    });
-    var bl_radio = new MUI.Radio({
-    id:"bl_radio"
-    });
-    var radiolist = new MUI.RadioList({
-    id:"radioList"
-    });
-
-    var v_radiolist = new MUI.RadioList({
-    id:"v_radioList"
-    });
-    var v_bl_radiolist = new MUI.RadioList({
-    id:"v_bl_radioList"
-    });
-
-    //progress
-    var p = new MUI.Progress({
-    id:"progress_gif",
-    percent:30
-    });
-    var p_g = new MUI.Progress({
-    id:"progress_g",
-    percent:60
-    });
-    var p_b = new MUI.Progress({
-    id:"progress_b",
-    percent:90
-    });
-    var p_y = new MUI.Progress({
-    id:"progress_y",
-    percent:100
-    });
-
-    //list
-    var list1 = new MUI.List({
-    id:"list1"
-    });
-    var n_list = new MUI.List({
-    id:"n_list"
-    });
-    var l_icon_list = new MUI.List({
-    id:"l_icon_list"
-    });
-    var r_icon_list = new MUI.List({
-    id:"r_icon_list"
-    });
-    var groupList = new MUI.GroupList({
-    id:"groupList"
-    });
-
-
-
-    //dialog
-    var currentEffect,
-        currentDialogFlg;
-
-    var dialog = new MUI.Dialog({
-    id:"dialog"
-    });
-    dialog.elem.onclick = function(){
-        dialog.hide(currentEffect);
-        currentDialogFlg = false;
-    }
-    var $E = J.event,
-        $D = J.dom;
-    $E.on($D.id("none"),"click",function(){
-            currentEffect = "none";
-            dialog.show("none");
-            currentDialogFlg = true;
-            });
-    $E.on($D.id("fade"),"click",function(){
-            currentEffect = "fade";
-            dialog.show("fade");
-            currentDialogFlg = true;
-            });
-    $E.on($D.id("pop"),"click",function(){
-            currentEffect = "pop";
-            dialog.show("pop");
-            currentDialogFlg = true;
-            });
-    $E.on($D.id("slideup"),"click",function(){
-            currentEffect = "slideup";
-            dialog.show("slideup");
-            currentDialogFlg = true;
-            });
-    $E.on($D.id("slidedown"),"click",function(){
-            currentEffect = "slidedown";
-            dialog.show("slidedown");
-            currentDialogFlg = true;
-            });
-    //slide
-    var sl = new MUI.Slider({
-    id:"slider"
-    });
-    sl.setValue(20);
-    var w_sl = new MUI.Slider({
-    id:"w_slider"
-    });
-    w_sl.setValue(40);
-    var b_sl = new MUI.Slider({
-    id:"b_slider"
-    });
-    b_sl.setValue(60);
-    var g_sl = new MUI.Slider({
-    id:"g_slider"
-    });
-    g_sl.setValue(80);
-
-    var v_sl = new MUI.Slider({
-    id:"v_slider",
-    vertical:true
-    });
-    v_sl.setValue(80);
-    var v_w_sl = new MUI.Slider({
-    id:"v_w_slider",
-    vertical:true
-    });
-    v_w_sl.setValue(60);
-    var v_b_sl = new MUI.Slider({
-    id:"v_b_slider",
-    vertical:true
-    });
-    v_b_sl.setValue(40);
-    var v_g_sl = new MUI.Slider({
-    id:"v_g_slider",
-    vertical:true
-    });
-    v_g_sl.setValue(20);
-
-    //toggleSwitch
-    var ts = new MUI.ToggleSwitch({
-    id:"toggleSwitch"
-    });
-    var bl_ts = new MUI.ToggleSwitch({
-    id:"bl_toggleSwitch"
-    });
-    var b_ts = new MUI.ToggleSwitch({
-    id:"b_toggleSwitch"
-    });
-
-
-    //select
-    var w_sel = new MUI.Select({
-    id:"w_menuSelector"
-    });
-    var g_sel = new MUI.Select({
-    id:"g_menuSelector"
-    });
-
-    var bl_sel = new MUI.Select({
-    id:"bl_menuSelector"
-    });
-    //imagechange
-    var ic = new MUI.ImageChange({
-        id:"image_slider",
-        isAutoChange:true,
-        autoChangeTime:3000,
-        canSwipe:true
-    });
-
-    var tb2 = new MUI.Tab({
-        id:"a_tab",
-        animate:"true"
-    });
-
-});
+            $(this).append(tpl);
+            $(tpl).find('.panel-body').html(content);
+        });
+    })
 </script>
-<script type="text/javascript" src="/Spirit/js/prism.js"></script>
