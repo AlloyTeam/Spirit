@@ -1,0 +1,124 @@
+/* block button fill 100% width of its container */
+.ui-btn,
+.ui-btn-block {
+    overflow: hidden;
+
+    border-radius: 3px;
+
+    text-align: center;
+}
+
+.ui-btn:after,
+.ui-btn-block:after{
+    border-radius: 6px;
+}
+
+.ui-btn {
+    display: inline-block;
+
+    margin: 14px 10px;
+
+    padding: 0 14px;
+    min-width: 56px;
+    height: 30px;
+
+    font-size: 15px;
+    line-height: 30px;
+
+    -webkit-box-sizing: border-box;
+}
+.ui-btn-block {
+    display: block;
+
+    margin: 14px 15px;
+
+    padding: 0 14px;
+    height: 44px;
+
+    font-size: 18px;
+    line-height: 44px;
+}
+
+/* disable style */
+.ui-btn[disable],
+.ui-btn-block[disable] {
+    background: #e9ebec !important;
+    color: #ccc !important;
+
+    pointer-events: none !important;
+}
+.ui-btn[disable]:after,
+.ui-btn-block[disable]:after{
+    border-width: 0 !important;
+}
+
+/* white style */
+.ui-btn-white {
+    background: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fafafa));
+    background: -webkit-linear-gradient(top, #fff, #fafafa);
+    background: linear-gradient(top, #fff, #fafafa);
+    color: rgb(0, 165, 224);
+}
+.ui-btn-white:after {
+    border: 1px solid #cacccd;
+}
+.ui-btn-white.js-active {
+    background: #f2f2f2;
+    color: rgba(0, 165, 224, 0.5);  
+}
+
+/* blue style */
+.ui-btn-blue {
+    background: #1fbaf3;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1fbaf3), to(#18b4ed));
+    background: -webkit-linear-gradient(top, #1fbaf3, #18b4ed);
+    background: linear-gradient(top, #1fbaf3, #18b4ed);
+    color: rgb(255, 255, 255);
+}
+.ui-btn-blue:after {
+    border: 1px solid #0baae4;
+}
+.ui-btn-blue.js-active {
+    background: #1ca7da;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* red style */
+.ui-btn-red {
+    background: #fc6156;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fc6156), to(#f75549));
+    background: -webkit-linear-gradient(top, #fc6156, #f75549);
+    background: linear-gradient(top, #fc6156, #f75549);
+    color: rgb(255, 255, 255);
+}
+.ui-btn-red:after {
+    border: 1px solid #f43d30;
+}
+.ui-btn-red.js-active {
+    background: #e2574d;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* orange style */
+.ui-btn-orange{
+    background: #ff6c00;
+    color: #fff;
+}
+.ui-btn-orange.js-active{
+    background: #b2340a;
+}
+
+.ui-btn > .icon,
+.ui-btn-block > .icon{
+    display: inline-block;
+
+    background-size: 100% 100%;
+
+    vertical-align: middle;
+}
+
+.ui-btn > .text,
+.ui-btn-block > .text{
+    vertical-align: middle;
+}
