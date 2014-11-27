@@ -12,8 +12,8 @@ language:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://laispace.github.io/Spirit/deploy/
-root: /Spirit/deploy
+url: http://laispace.github.io/Spirit
+root: /Spirit/
 permalink: :title.html
 tag_dir: tags
 category_dir: categories
@@ -68,4 +68,4 @@ markdown:
 deploy:
   type: github
   repo: https://github.com/laispace/Spirit.git
-  branch: gh-pages
+  branch: deploy
