@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mobile web solutions, based on project Mars.">
+  <meta name="author" content="Alloyteam">
+  
+  <title>JM | Spirit - 腾讯移动Web整体解决方案 | AlloyTeam</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/Spirit/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy this line! -->
+  <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  <link href="/Spirit/css/common.css" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset="70">
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/Spirit/" class="navbar-brand">Spirit</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li><a href="/Spirit/modules/Standard/index.html">移动Web开发规范</a></li>
+            <li class="dropdown">
+              <a id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">JM<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/JM/index.html">组件</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://github.com/AlloyTeam/JM/archive/master.zip">下载</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" target="_blank" href="https://github.com/AlloyTeam/JM">View on Github</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">JMUI<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/JMUI/index.html">简介</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/JMUI/demo.html">组件</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://github.com/AlloyTeam/JMUI/archive/master.zip">下载</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" target="_blank" href="https://github.com/AlloyTeam/JMUI">View on Github</a></li>
+              </ul>
+            </li>
+             <li class="dropdown">
+              <a id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Pro<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/Pro/index.html">组件</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://github.com/AlloyTeam/Pro/archive/master.zip">下载</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" target="_blank" href="https://github.com/AlloyTeam/Pro">View on Github</a></li>
+              </ul>
+            </li>
+            <li><a href="/Spirit/modules/Mobug/index.html">Mobug</a></li>
+            <li><a href="/Spirit/modules/Mars/index.html">Mars</a></li>
+            <li>
+              <a href="/Spirit/mobile_industry_report_2013.html">2013移动互联网行业报告 <sup><span class="label label-success label-lg">new</span></sup></a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+              <li><a data-toggle="modal" data-target="#myModal" href="javascript:;">关于Spirit</a></li>
+              <li><a target="_blank" href="http://www.alloyteam.com/about/">关于我们</a></li>
+          </ul>
+        </nav>
+    </div>
+</header>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/Spirit/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/Spirit/bootstrap3/js/bootstrap.min.js"></script>
+<script src="/Spirit/js/common.js"></script>
+
+  <link rel="stylesheet" href="/Spirit/css/prism.css" />
+<link rel="stylesheet" href="css/jmui/mui-base.css" />
+<link rel="stylesheet" href="css/jmui/mui-buttons-new.css" />
+<link rel="stylesheet" href="css/main.css" />
+
+<section id="jm" class="container row">
+    <div class="col-md-3">
+        <div id="sidebar" class="my_sidebar">
+            <ul class="nav">
+                <li class="sidebar_head_li">
+                    <a href="#overview">概述</a>
+                    <ul class="nav">
+                        <li><a href="#overview_intro">介绍</a></li>
+                        <li><a href="#overview_features">特性</a></li>
+                        <li><a href="#overview_first">第一个JM程序</a></li>
+                        <li><a href="#overview_analysis">代码解析</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar_head_li"><a href="#animation">Animation</a></li>
+                <li class="sidebar_head_li"><a href="#audio">audio(按需加载)</a></li>
+                <li class="sidebar_head_li"><a href="#base">base</a></li>
+                <li class="sidebar_head_li"><a href="#browser">browser</a></li>
+                <li class="sidebar_head_li"><a href="#cookie">cookie</a></li>
+                <li class="sidebar_head_li"><a href="#dom">dom</a></li>
+                <li class="sidebar_head_li"><a href="#event">event</a></li>
+                <li class="sidebar_head_li"><a href="#format">format</a></li>
+                <li class="sidebar_head_li"><a href="#http">http</a></li>
+                <li class="sidebar_head_li"><a href="#platform">platform</a></li>
+                <li class="sidebar_head_li"><a href="#prefix">prefix</a></li>
+                <li class="sidebar_head_li"><a href="#string">string</a></li>
+                <li class="sidebar_head_li"><a href="#support">support</a></li>
+                <li class="sidebar_head_li"><a href="#type">type</a></li>
+                <li class="sidebar_head_li"><a href="#util">util</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="page_content col-md-9">
+        <div id="overview">
+            <h1 id="overview_intro">JM <small>Javascript Mobile Framework</small></h1>
+            <blockquote>
+                <p>新一代<strong>轻量级高性能</strong>移动web框架，由腾讯前端团队<code>AlloyTeam</code>经项目实践积累沉淀而成。为拥抱移动互联网全新设计，专注为移动web项目，整个框架压缩后只有<strong>36K</strong></p>
+            </blockquote>
+
+            <p>
+                新的移动平台，给web带来更多的机会，同时也带来更多的挑战。原PC端的各种浏览器兼容，已经升级为<strong>多平台多终端多版本多浏览器</strong>的复杂问题。为了解决这个问题，各种移动框架应运而生，但是为了解决问题而使整个库的体积庞大，最终在<strong>兼容和性能</strong>的权衡上没有取得平衡。JM在设计上更看重<code>性能</code>，所以代码量上力求精简，同时能够处理大部分的移动web兼容问题。或许你发现JM并没有过多地为帮你做什么事情，但我们却为你避开了很多移动上的坑。
+            </p>
+
+            <h3 id="overview_features">特性</h3>
+            <ul>
+                <li>体积小</li>
+                <li>源用JX的编码方式</li>
+                <li>模块按需加载，可定制</li>
+                <li>可与JMUI结合使用，提供一整套移动方案</li>
+            </ul>
+
+            <h3 id="overview_first">第一个用JM写的程序</h3>
+            <p>下面我们尝试使用JM来写一个HelloWorld程序，通过这个小Demo，你可以对JM有个概括的了解。</p>
+            <p><a href="./helloWorld.html" target="_blank">点击我查看Demo</a></p>
+
+            <p>主要html</p>
+            <pre class="language-markup"><code>&lt;button id="myButton" class="btn btn-primary btn-block" &gt;
+    &lt;span class="btn_text"&gt;Hello World&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;div class="word"&gt;
+    &lt;div id="word1"&gt;Hello World !&lt;/div&gt;
+    &lt;h2 id="word2" &gt;by Tencent AlloyTeam&lt;/h2&gt;
+&lt;/div&gt;</code></pre>
+
+            <p>主要js</p>
+            <pre class="language-javascript"><code>var $E = JM.event;
+var $D = JM.dom;
+
+var btn = $D.id('myButton');
+var word1 = $D.id('word1');
+var word2 = $D.id('word2');
+
+$E.on(btn,'click',function(){
+    //设置动画基本参数，并且每个动画间隔为1.5秒
+    J.Animation({
+        selector:'#word1',
+        duration:1500,
+        use3d:true
+    }).setStyle({       //向右运动了40%，并且color变成蓝色
+        'top':'60px',
+        'opacity':'1'
+    }).transit(function(){
+        this.setDuration(600);
+        this.scale(2).setStyle({
+            'top': '40px',
+            'opacity':'0'
+        }).transit(function(){
+            word1.style.cssText = "";  //清空dom的style，让动画回归起初状态
+        });
+    });
+
+    J.Animation({
+        selector:'#word2',
+        duration: 1500,
+        use3d : true
+    }).setStyle({
+        'top':'140px',
+        'opacity':'1'
+    }).transit(function(){
+        this.setDuration(800);
+        this.scale(2).setStyle({
+            'top': '150px',
+            'opacity':'0'
+        }).transit(function(){
+            word2.style.cssText = "";
+        });
+    });
+});</code></pre>
+
+            <p id="overview_analysis">
+                <strong>代码解析</strong>
+                示例程序的button样式额外地使用了<code>JMUI</code>的button样式，不使用也没有影响，样式可以你写你喜欢的。我们来看看js代码部分，<code>$D</code>和<code>$E</code>是引用jm的模块名，这样再代码使用中更加简洁而已，你完全也可以<code>var btn = JM.dom.id('#word1');</code>。代码中展示了JM三个模块的使用：Dom节点选择器，事实处理机制，动画模块。
+            </p>
+            
+            <p>
+                JM除了提供常规的选择器外<code>JM.dom.$(selectorText)</code>，还提供专门的选择id选择器<code>JM.dom.$(id)</code>，我们也建议尽量使用id选择器，因为在效率上id选择器是最快的。在事件处理上<code>JM.event.on(obj, evtType, handler)</code>,obj为绑定的dom节点，evtType为事件类型，hadler的事件处理函数，obj和handler都可以输入数组，我们支持多对象多事件同时处理处理。还有些常规的off，one，fire等方法外，还对swip，hold，toch等移动专属事件方法，详细情况可以参考<a href="#event">event模块</a>。
+            </p>
+
+            <p>
+                事件处理的代码里面是<code>JM.Animation</code>内容。有两个段动画代码，我们看第一段就可以了。传给Animation的是一些基本参数，其中<code>use3d</code>来开启这段动画是否使用GPU的3D动画加速(<em>注意这不是银弹，不是所有动画都必须加上</em>)，<code>setStyle</code>方法顾名思义设置要修改的样式，<code>transit</code>方法就是把我们<code>setStyle</code>修改的样式使用css3的transiton的动画形式展示，<code>transit</code>方法只接受一个FinshFunc参数，动画执行后就会执行FinshFunc。通过在FinshFunc函数里在写动画函数，就形成动画回调了。在最后的<code>transit</code>方法回调中，我们把dom的style属性取消掉，这样进行动画就会回归源点。
+            </p>
+        </div>
+
+        <h2 id="animation">Animation</h2>
+        <p>动画模块，JM的动画实现全部由CSS3实现，有以下几个特征</p>
+        <ul>
+            <li>动画底层由CSS3实现</li>
+            <li>动画参数采用链式调用动画，非传统的class操作css3动画。</li>
+            <li>可自由开启GPU的3D动画加速</li>
+        </ul>
+        <div class="alert alert-warning">
+            依赖<strong>dom,event,type</strong>三个模块。
+        </div>
+
+        <div class="demo_block">
+            <div id="demo1_rect" class="rect"></div>
+            <button id="demo1_runbtn" onclick="goAnimation" class="btn btn-primary" style="top:200px;">运动动画</button>
+        </div>
+
+        <p>核心代码</p>
+        <pre class="language-javascript"><code>runBtn.onclick = function(){
+    $D.setStyle(runBtn,"display","none");
+    rect.style.cssText = "";
+
+    //设置动画基本参数，并且每个动画间隔为1秒
+    J.Animation({
+        selector:"#demo1_rect",  //要操作的dom的selector
+        duration:1000,
+        use3d:true
+    }).setStyle({       //向右运动了60%，并且color变成蓝色
+        "left":"60%",
+        "background":"blue"
+    }).transit(function(){
+        this.scale(.5).setStyle({
+            'background':"red"
+        }).transit(function(){
+            this.rotate(180).setStyle({
+                opacity:0
+            }).transit(function(){
+                this.toOrigin().setStyle({
+                    "opacity":1,
+                    "background":"green"
+                }).transit(function(){
+                    $D.setStyle(runBtn,"display","block");
+                });
+            });
+        });
+    });
+}</code></pre>
+
+        <p>
+            J.Animation是这个模块的命名模块，传入一个options的obj来设置动画的基本参数。然后在函数尾部使用<code>setStyle</code>进行回调，<code>setStyle</code>是用于设置动画改变的状态。再在函数尾部调用<code>transit</code>方法表示以CSS3的transition方式进行启动动画。我们依旧在<code>transit</code>里面传入匿名函数，表示一段动画结束后，进行回调函数callback，这样我们就不断进行<code>链式调用</code>和callback回调来完成一段动画。
+        </p>
+        <h3 id="animation_1">Animation 传入参数说明</h3>
+        <ul class="param_list">
+            <li><span class="param">selector</span> 动画操作的dom的selector(id)</li>
+            <li><span class="param">duration</span> 一段动画执行时间</li>
+            <li><span class="param">use3d</span> 是否启用硬件加速</li>
+            <li><span class="param">runType</span> 动画类型(ease-in, ease-in-out)</li>
+            <li><span class="param">delay</span> 动画延迟时间</li>
+        </ul>
+        <h3 id="animation_2">Animation 动画函数说明</h3>
+        <ul class="function_list">
+            <li><span class="funcName">scale:function(scale){}</span></li>
+            <li><span class="funcName">scaleX:function(scaleX){}</span></li>
+            <li><span class="funcName">scaleY:function(scaleY){}</span></li>
+            <li><span class="funcName">rotate:function(rotate){}</span></li>
+            <li><span class="funcName">rotateX:function(rotateX){}</span></li>
+            <li><span class="funcName">rotateY:function(rotateY){}</span></li>
+            <li><span class="funcName">rotateZ:function(rotateZ){}</span></li>
+            <li><span class="funcName">translate:function(translateX,translateY,translateZ){}</span></li>
+            <li><span class="funcName">translateX:function(translateX){}</span></li>
+            <li><span class="funcName">translateY:function(translateY){}</span></li>
+            <li><span class="funcName">skew:function(x,y){}</span></li>
+            <li><span class="funcName">skewX:function(x){}</span></li>
+            <li><span class="funcName">skewY:function(y){}</span></li>
+            <li><span class="funcName">setStyle:function(styleName,styleValue){}</span></li>
+            <li><span class="funcName">toOrigin:function(){}</span> <span class="desc">动画参数清空</span></li>
+            <li><span class="funcName">transit:function(onFinished){}</span> <span class="desc">启动动画 onFinished为动画回调函数</span></li>
+        </ul>
+        <p>大体上动画函数都很好理解，不做过多解析，我们使用链式js的方式来编辑CSS3动画，CSS3的动画参数都可以自个设置，并且动画结束后可自行销毁，不会冗余页面代码样式。</p>
+
+        <h2 id="audio">audio(按需加载)</h2>
+        <p>在web上播放声音一直体验都不是很好，包括下载声源需要加载时间，而且各种的声音播放方式兼容性差等等。JM的额外模块audio是就是处理web上声音的模块。因为不是所有的web页面都需要声音，所以我们建议需要播放声音的时候才加载这个模块。在<code>HTML5</code>诞生到来，让web在多媒体领域上不区于flash，原生的控件，让我们的页面播放页面更加简单。但是并不是真正的简单，问题依旧是浏览器间的问题，或者是各种终端版本的问题，兼容性依旧是个核心问题。我们audio模块就是为了解决播放声音的兼容性及操作的一致性而生，让我们的声音在web上，在<strong>真正意义上的简单起来</strong>。</p>
+
+        <div class="alert alert-warning">
+            依赖<strong>dom,event,browser</strong>三个模块。
+        </div>
+
+        <h2 id="base">base 核心模块</h2>
+        <p>JM的一些核心方法，为所有模块所共用。例如JM的命名方式<code>namespace</code>，类封装<code>Class</code>，继承<code>extend</code>，操作List<code>filter``map``some</code>等一系列继承函数。</p>
+        <p>示例代码</p>
+
+        <pre class="language-javascript"><code>JM.$package("MUI",function(J){
+    // JM的命名空间
+});
+
+//JM的类继承方式
+var AnimateTab = J.Class({extend:MUI.Tab},{
+    init:function(options){
+        //do something
+    },
+    _handleEvent:function(e){
+        //do something
+    },
+    bindHandlers:function(){
+        //do something
+    }
+});</code></pre>
+
+        <h3>base 公开对外基础函数</h3>
+        <ul class="function_list">
+            <li>$namespace: function(name) {}<span class="desc">为$package函数内部使用</span></li>
+            <li>$package:function(ns,func) {}<span class="desc">命名空间</span></li>
+            <li>extend:function(destination,source) {} <span class="desc">继承</span></li>
+            <li>bind:function(func, context, var_args) {}</li>
+            <li>Class:function(){} <span class="desc">定义类函数</span></li>
+            <li>toArray: function(pseudoArrayObj){}</li>
+            <li>indexOf:function(arr,elem){}</li>
+            <li>every:function(arr,callback){}</li>
+            <li>some:function(arr,callback){}</li>
+            <li>each:function(arr,callback){}</li>
+            <li>map:function(arr,callback){}</li>
+            <li>filter:function(arr,callback){}  <span class="desc">过滤List</span></li>
+            <li>isEmptyObject:function(obj){}</li>
+            <li>random : function(min, max){}</li>
+        </ul>
+
+        <h2 id="browser">browser 浏览器检测模块</h2>
+        <p>
+            本可简单简单地划分到utils模块，但是在移动web上我们检测的不单单是浏览器及其版本后，后继拓展还有，终端平台及其版本，所以我们单独地划分出一个模块出来（其实最终还是会合到一个js里面）。
+        </p>
+        <pre class="language-javasctript"><code>//对应的值是版本号，如果不是这个浏览器则版本号为0
+
+if(J.browser.plugins.flash&gt;=9){
+
+}
+if(J.browser.ie){
+
+}
+if(J.browser.chrome &gt;= 30){
+
+}
+if(J.adobeAir){
+
+}</code></pre>
+
+        <h2 id="cookie">cookie</h2>
+        <p>非常简单的cookie种植和移除,直接粘贴源码吧</p>
+        <pre class="language-javascript"><code>J.$package(function(J){
+    var domainPrefix = window.location.host;
+    var cookie = {
+        set : function(name, value, domain, path, hour) {
+            if (hour) {
+                var today = new Date();
+                var expire = new Date();
+                expire.setTime(today.getTime() + 3600000 * hour);
+            }
+            window.document.cookie = name + "=" + value + "; " + (hour ? ("expires=" + expire.toGMTString() + "; ") : "") + (path ? ("path=" + path + "; ") : "path=/; ") + (domain ? ("domain=" + domain + ";") : ("domain=" + domainPrefix + ";"));
+            return true;
+        },
+        get : function(name) {
+            var r = new RegExp("(?:^|;+|\\s+)" + name + "=([^;]*)");
+            var m = window.document.cookie.match(r);
+            return (!m ? "" : m[1]);
+        },
+        remove : function(name, domain, path) {
+            window.document.cookie = name + "=; expires=Mon, 26 Jul 1997 05:00:00 GMT; " + (path ? ("path=" + path + "; ") : "path=/; ") + (domain ? ("domain=" + domain + ";") : ("domain=" + domainPrefix + ";"));
+        }
+    };
+    J.cookie = cookie;
+
+});</code></pre>
+
+        <h2 id="dom">dom</h2>
+        <p>HTML的dom操作模块。包括选择器，选取样式，修改样式切换Class等方法。虽然跟著名的jquery对比会逊色一筹，但是基本的功能都能满足，最重要的是jquery有100多K，我们才30多K，我们把最实际常用的Dom操作抽离处理，减少库的代码量，在移动Web上带来更少的流量。</p>
+        <p>示例代码</p>
+        <pre class="language-javascript"><code>var $D = J.dom;
+var runBtn = $D.id('runBtn'),
+    runObj = $D.$('#demo_block .rect'),
+    stopBtn = $D.className('demaxiya');
+
+runBtn.onclick = function(){
+    $D.toggleClass(runBtn,'active');
+}
+
+if($D.getStyle(runBtn,'background') == '#000'){
+    $D.remove(stopBtn);
+}</code></pre>
+
+        <p>
+            除了比较常用的<code>J.dom.$()</code>的选择器方式，我们还提供了<code>J.dom.id()</code>和<code>J.dom.tagName()</code>等的选择器方式，我们建议，可以的话尽量是用id选择器，因为这是效率最高的。我们没有像Jquery那样吧选择到的Dom元素包装成一个Jquery对象，我们选择到的是原生的Dom元素，方式也是传入Dom和参数。It's simple,but it do well。
+        </p>
+        <h3 id="dom_1">dom 函数列表</h3>
+        <ul class="function_list">
+            <li>$:function(selector,context){}  <span class="desc">会优先选用原生的</span></li>
+            <li>id:function(id){}</li>
+            <li>tagName:function(tagName,context){}</li>
+            <li>className:function(className,context){}</li>
+            <li>remove:function(node){}</li>
+            <li>setSelectorEngine:function(func){}</li>
+            <li>toDomStyle:function(cssStyle){}</li>
+            <li>toCssStyle:function(domStyle){}</li>
+            <li>setStyle:function(elem ,styleName,styleValue){}</li>
+            <li>getStyle: function(el, styleName){}</li>
+            <li>getVendorPropertyName : function(prop) {}</li>
+            <li>isSupprot3d : function(){}</li>
+            <li>filterSelector:function(arr,selector){}</li>
+            <li>addClass function(elem,className){}</li>
+            <li>removeClass function(elem,className){}</li>
+            <li>hasClass function(elem,className){}</li>
+            <li>toggleClass:function(ele,className){}</li>
+            <li>insertAfter: function(parentElement, newElement, refernceElement){} <span class="desc">类似源生方法</span> <code>insertBefore</code></li>
+        </ul>
+
+        <h2 id="event">event</h2>
+        <p>
+            除了平常的支持IE等浏览器兼容外，最重要的是支持移动端的touch，swip等手势事件及transform等移动专有事件.PC端和移动端最大一个不同除了屏幕分辨率外，还有一个非常重要的就是事件不同。我们不但支持了这些事件，还自定义了手势事和提供了很多辅助方法，帮助开发者的实际开发应用，例如:<code>getTouchPos``getDist</code>等。在移动web上坑最多的就是event处理的这一块，至少JM会让你少走很多弯路。
+        </p>
+
+        <p>示例代码</p>
+        <pre class="language-javascript"><code>var $E = J.event;
+//动画事件结束后
+$E.on(this.contentWrap,"webkitTransitionEnd",function(e){
+    // 自身销毁changed事件
+    $E.fire(self ,"changed" ,{
+        type:"changed",
+        currentIndex:self.currentIndex
+    });
+});
+
+var startEvt = isTouchDevice ? "touchstart" : "mousedown";
+var moveEvt = isTouchDevice ? "touchmove" : "mousemove";
+var endEvt = isTouchDevice ? "touchend" : "mouseup";
+
+//touch事件的绑定
+$E.on(document.body ,moveEvt ,_handleEvent);
+$E.on(document.body ,endEvt ,_handleEvent);</code></pre>
+
+        <p>注意，这里关于touch或swip事件的例子可以查看JMUI的控件，这样会更加清楚.</p>
+
+        <h3 id="event_1">event 方法事件列表</h3>
+        <ul class="function_list">
+            <li>isDomEvent function(obj,evtType){}  <span class="desc">如果是DOM事件，返回正确的事件名；否则返回布尔值 <code>false</code></span></li>
+            <li>bindDomEvent function(obj, evtType, handler){} <span class="desc">封装绑定DOM事件的方法,以兼容低版本IE</span></li>
+            <li>unbindDomEvent function(obj, evtType, handler){} <span class="desc">解除绑定DOM事件的方法</span></li>
+            <li>on:function(obj, evtType, handler){}</li>
+            <li>once:function(obj,evtType,handler){}</li>
+            <li>off:function(obj,evtType,handler){}</li>
+            <li><p>fire:function(obj,evtType){}</p></li>
+            <li>
+                <p>getActionTarget : function(event, level, property, parent){}</p>
+                <p class="desc">获取点击的事件源, 该事件源是有 cmd 属性的 默认从 event.target 往上找三层,找不到就返回null
+                @param {Event} event</p>
+                <p class="desc">@param {Int}level 指定寻找的层次</p>
+                <p class="desc">@param {String} property 查找具有特定属性的target,默认为cmd</p>
+                <p class="desc">@param {HTMLElement} parent 指定查找结束点, 默认为document.body</p>
+                <p class="desc">@return {HTMLElement} | null</p>
+            </li>
+            <li>
+                <p> bindCommands : function(targetElement, eventName, commends, commendName){}</p>
+                <p class="desc">@example</p>
+                <p class="desc">bindCommands(cmds);</p>
+                <p class="desc">bindCommands(el, cmds);</p>
+                <p class="desc">bindCommands(el, 'click', cmds);</p>
+            </li>
+            <li>getTouchPos = function(e){} <span class="desc">辅助函数</span></li>
+            <li>getDist = function(p1 , p2){} <span class="desc">计算两点之间距离</span></li>
+            <li>getAngle = function(p1 , p2){} <span class="desc">计算两点之间所成角度</span></li>
+        </ul>
+
+        <h3 id="event_2">event 自定义事件</h3>
+        <ul class="event_list">
+            <li>_fire</li>
+            <li>_off</li>
+            <li>tap <span class="desc">按下松开之间的移动距离小于20，认为发生了tap</span></li>
+            <li>hold <span class="desc">按下松开之间的移动距离小于20，认为点击生效swipe按下之后移动30px之后就认为swipe开始,swipe最大经历时间500</span></li>
+            <li>transform</li>
+            <li>scrollstart</li>
+            <li>scrollend</li>
+            <li>scrolltobottom</li>
+            <li>ortchange <span class="desc">兼容性更好的orientationchange事件，这里使用resize实现。不覆盖原生orientation change 和 resize事件</span></li>
+        </ul>
+    
+        <h2 id="format">format</h2>
+        <p>不多说，直接上源码</p>
+        <pre class="language-javascript"><code>var date = function(date, formatString){
+    /*
+     * eg:formatString="YYYY-MM-DD hh:mm:ss";
+     */
+    var o = {
+        "M+" : date.getMonth()+1,    //month
+        "D+" : date.getDate(),    //day
+        "h+" : date.getHours(),    //hour
+        "m+" : date.getMinutes(),    //minute
+        "s+" : date.getSeconds(),    //second
+        "q+" : Math.floor((date.getMonth()+3)/3),    //quarter
+        "S" : date.getMilliseconds()    //millisecond
+    }
+
+    if(/(Y+)/.test(formatString)){
+        formatString = formatString.replace(RegExp.$1, (date.getFullYear()+"").substr(4 - RegExp.$1.length));
+    }
+
+    for(var k in o){
+        if(new RegExp("("+ k +")").test(formatString)){
+            formatString = formatString.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+        }
+    }
+    return formatString;
+};</code></pre>
+
+        <h2 id="http">http</h2>
+        <p>http处理模块，一些处理urlparam方法和ajax方法。</p>
+        <p>示例代码</p>
+        <pre class="language-javascript"><code>J.http.ajax({
+    url: 'http:www.xxx.com/getSomething'
+    method : 'post',
+    timeout : 50000,
+    withCredentials : true, //是否跨域
+    async : true, //是否异步
+
+    onError : function(data){
+        alert(' ajax error : ' + data.msg);
+    },
+
+    onSuccess : function(data){
+        //do something ...
+    },
+    onTimeout : function(data){
+        //do something ...
+    }
+
+});</code></pre>
+
+        <h3 id="http_1">http 方法列表</h3>
+        <ul class="function_list">
+            <li>serializeParam : function ( param ) {}</li>
+            <li>getUrlParam :  function ( name ,href ,noDecode ) {}</li>
+            <li>ajax : function ( option ) {}</li>
+            <li>offlineSend:function(options) {}</li>
+        </ul>
+
+    <h2 id="platform">platform 平台检查模块</h2>
+    <p>平台检查模块跟browser模块一样，是检测模块，后继优化会把两者这合并。为兼容多终端多版本，平台检查是少不了。</p>
+    <p>示例代码</p>
+    <pre class="language-javascript"><code>if(J.platform.android &amp;&amp; J.platform.ieVersion &gt; 4){
+    //....
+}
+if(platform.android){
+
+}
+//其他平台检查
+//platform.android
+//platform.iPhone
+//platform.iPad
+//platform.iPod
+//platform.winPhone 
+//platform.IOS
+//.touchDevice</code></pre>
+
+    <h2 id="prefix">prefix 前缀辅助模块</h2>
+    <p>提供了集中使用prefixe的场景，dom节点，css，js等。</p>
+    <pre class="language-javascript"><code>J.prefix.dom == 'WebKit'
+J.prefix.lowercase == 'moz'
+J.prefix.css == '-ms'
+J.prefix.js == 'webkit'</code></pre>
+
+    <h2 id="string">string</h2>
+    <p>提供tmpl 轻量的模板函数。<code>encodeHTML</code>和<code>decodeHTML</code>常用字符编码解析函数和一些URL操作的辅助函数。</p>
+    <ul class="function_list">
+      <li>template function(str, data){}</li>
+      <li>encodeHtml function(sStr){}</li>
+      <li>isURL function(str) {}</li>
+      <li>parseURL function(str) {}</li>
+      <li>buildURL function(obj) {}</li>
+    </ul>
+    <h2 id="support">support 特性检测模块</h2>
+    <p>目前特效检测内容只用audio，fixed，flash和transition。</p>
+    <pre class="language-javascript"><code>J.support = {
+    audio : {
+        m4a : 'maybe',
+        mp3 : 'maybe',
+        ogg : 'probably',
+        wav : 'probably'
+    }
+    fixed : true,
+    flash : ture,
+    transitionend : 'transititonend'
+}</code></pre>
+
+    <h2 id="type">type 类型检查辅助模块</h2>
+    <ul class="function_list">
+      <li>isArray : function(o){}</li>
+      <li>isObject : function(o) {}</li>
+      <li>isBoolean : function(o) {}</li>
+      <li>isNumber : function(o) {}</li>
+      <li>isUndefined : function(o) {}</li>
+      <li>isNull : function(o) {}</li>
+      <li>isFunction : function(o) {}</li>
+      <li>isString : function(o) {}</li>
+    </ul>
+
+    <h2 id="util">util 辅助模块</h2>
+    <p>提供常用的辅助函数，还有提供一些移动上特色需要的辅助函数，例如<code>hideUrlBar</code>隐藏url栏，<code>preventScrolling</code>禁止滚动等。</p>
+    <ul class="function_list">
+        <li>hideUrlBar:function(){} <span class="desc">隐藏URL栏</span></li>
+        <li>preventScrolling : function() {} <span class="desc">禁止滚动</span></li>
+        <li>activeScrolling:function(){} <span class="desc">启用滚动</span></li>
+        <li>scrollToTop:function(duration,runType){} <span class="desc">滚动到顶部动画(css3动画)</span></li>
+        <li>fixElement:function(ele,options){} <span class="desc">兼容浏览器的fixed定位</span></li>
+        <li>hoverEffect:function(ele,className){}</li>
+    </ul>
+
+    </section>
+
+<script src="js/JM.js"></script>
+
+<script>
+$(function(){
+    // back to top
+    setTimeout(function () {
+      var $sideBar = $('.my_sidebar')
+
+      $sideBar.affix({
+        offset: {
+          top: function () {
+            var offsetTop      = $sideBar.offset().top
+            var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+            var navOuterHeight = $('#header').height()
+
+            return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+          }
+        , bottom: function () {
+            return (this.bottom = $('.footer').outerHeight(true))
+          }
+        }
+      })
+    }, 100)
+
+    //for demo
+    var $D = JM.dom;
+    var runBtn = $D.id("demo1_runbtn");
+    var rect = $D.id("demo1_rect");
+    runBtn.onclick = function(){
+        $D.setStyle(runBtn,"display","none");
+        rect.style.cssText = "";
+
+        //设置动画基本参数，并且每个动画间隔为1秒
+        J.Animation({
+            selector:"#demo1_rect",
+            duration:1000,
+            use3d:true
+        }).setStyle({       //向右运动了40%，并且color变成蓝色
+            "left":"60%",
+            "background":"blue"
+        }).transit(function(){
+            this.scale(.5).setStyle({
+                'background':"red"
+            }).transit(function(){
+                this.rotate(180).setStyle({
+                    opacity:0
+                }).transit(function(){
+                    this.toOrigin().setStyle({
+                        "opacity":1,
+                        "background":"green"
+                    }).transit(function(){
+                        $D.setStyle(runBtn,"display","block");
+                    });
+                });
+            });
+        });
+    }
+
+
+});
+</script>
+<script type="text/javascript" src="/Spirit/js/prism.js"></script>
+
+  <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">关于Spirit</h4>
+      </div>
+      <div class="modal-body">
+        <p>Spirit（勇气号），美国航天局NASA派往Mars（火星）的第一艘探测器。</p>
+        <p>移动Web开发是一块新的领域，甚至有很多坑，这一点与人类从未踏上的Mars（火星）相似。为了避免开发者重复遇到相同的问题，我们创建了Mars项目（<a target="_blank" href="https://github.com/AlloyTeam/Mars">view on Github</a>），收集与归纳移动Web开发中常见的问题。</p>
+        <p>Spirit正是为了Mars而生，Mars项目中归纳的问题，会放到Spirit中解决，并沉淀到开发工具（JM与JMUI）以及开发规范中，真正建立移动Web开发的集成解决方案。</p>
+        <p>如果你也在移动Web遇到了问题，请到<a target="_blank" href="https://github.com/AlloyTeam/Mars">Mars项目</a>提交Issue。<span class="glyphicon glyphicon-heart-empty"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  <div class="footer">
+    <div class="container text-center">
+        <p><a href="http://alloyteam.github.io/Spirit/MIT-LICENSE.txt">开源协议</a> | <a target="_blank" href="https://github.com/AlloyTeam/Spirit/issues/new">反馈意见</a></p>
+        <p>© 2011-2014 <a target="_blank" href="http://www.alloyteam.com/">Tencent Alloyteam</a>. All Rights Reserved. Powered by <a target="_blank" href="http://zespia.tw/hexo/">Hexo</a></p>
+    </div>
+</div>
+
+  <!--Tencent Analytics-->
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=24711241" charset="UTF-8"></script>
+<!--Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23019343-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

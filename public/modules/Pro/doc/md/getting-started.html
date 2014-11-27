@@ -1,0 +1,61 @@
+<div class="section-header"><br>    <h1 class="section-title">Getting started</h1><br>    <p class="section-description">An overview of Pro, how to download and use, basic templates.</p><br></div>
+
+<h1 id="download" class="article-title">Download</h1>
+
+<p>Pro has a few easy ways to quickly get started, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.</p>
+
+<p><h3>Download Pro</h3></p>
+<p><a href="#" class="ui-button" role="button" onclick="">Download Pro</a> Compiled and minified CSS, JavaScript.</p>
+
+<p><a href="#" class="ui-button" role="button" onclick="">Download Source</a> Source CSS, JavaScript.</p>
+
+<p><h3>Install with Bower</h3></p>
+<p>Install and manage Pro’s CSS, JavaScript, using <a href="http://bower.io">Bower</a>.</p>
+
+<pre><code class="bash">bower install pro
+</code></pre>
+<h1 id="setup" class="article-title">Setup</h1>
+
+<p>3 steps for structuring your Pro application</p>
+<ol><br>    <li><br>        <h3>Set <code>viewport</code> meta</h3><br>        <p><code>&lt;name=”viewport” content=”width=device-width, initial-scale=1.0, user-scalable=no”&gt;</code></p><br>    </li><br>    <li><br>        <h3>Set fixed bars</h3><br>        <p>All fixed bars (<code>.ui-top-bar</code>, <code>.ui-bottom-bar</code>) should always be the first thing in the body of the page. This is really important!</p><br>    </li><br>    <li><br>        <h3>Put content into <code>.ui-page</code> </h3><br>        <p>Anything that’s not a <code>-bar</code> should be put in a div with the class <code>ui-page</code>. Put this div after the bars in the body tag.</p><br>    </li><br></ol>
+
+<h1 id="basic-template" class="article-title">Basic template</h1>
+
+<p>Start with this basic HTML template, or modify it, adapting them to suit your needs.</p>
+<p>Copy the HTML below to begin working with a minimal Pro document.</p>
+<pre><code class="html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">'utf-8'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Pro Template<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"viewport"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"width=device-width, initial-scale=1.0, user-scalable=no"</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Pro CSS --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/pro.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ui-app"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ui-top-bar js-no-bounce"</span>&gt;</span>
+        PRO Template
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ui-bottom-bar js-no-bounce"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"toolbar"</span> <span class="hljs-attribute">tabindex</span>=<span class="hljs-value">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ui-bottom-bar-button js-active"</span> <span class="hljs-attribute">data-toggle</span>=<span class="hljs-value">"tab"</span> <span class="hljs-attribute">data-target</span>=<span class="hljs-value">"#page1"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ui-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ui-label"</span>&gt;</span>CSS<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"page1"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ui-page js-active"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"ui-page-content"</span>&gt;</span>
+             <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Pro JS --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/pro.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>

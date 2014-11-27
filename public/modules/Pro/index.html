@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mobile web solutions, based on project Mars.">
+  <meta name="author" content="Alloyteam">
+  
+  <title>Pro &amp;middot; Demo | Spirit - 腾讯移动Web整体解决方案 | AlloyTeam</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/Spirit/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy this line! -->
+  <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  <link href="/Spirit/css/common.css" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target="#sidebar" data-offset="70">
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/Spirit/" class="navbar-brand">Spirit</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li><a href="/Spirit/modules/Standard/index.html">移动Web开发规范</a></li>
+            <li class="dropdown">
+              <a id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">JM<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/JM/index.html">组件</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://github.com/AlloyTeam/JM/archive/master.zip">下载</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" target="_blank" href="https://github.com/AlloyTeam/JM">View on Github</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">JMUI<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/JMUI/index.html">简介</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/JMUI/demo.html">组件</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://github.com/AlloyTeam/JMUI/archive/master.zip">下载</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" target="_blank" href="https://github.com/AlloyTeam/JMUI">View on Github</a></li>
+              </ul>
+            </li>
+             <li class="dropdown">
+              <a id="drop" role="button" class="dropdown-toggle" data-toggle="dropdown">Pro<b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/Spirit/modules/Pro/index.html">组件</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="https://github.com/AlloyTeam/Pro/archive/master.zip">下载</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" target="_blank" href="https://github.com/AlloyTeam/Pro">View on Github</a></li>
+              </ul>
+            </li>
+            <li><a href="/Spirit/modules/Mobug/index.html">Mobug</a></li>
+            <li><a href="/Spirit/modules/Mars/index.html">Mars</a></li>
+            <li>
+              <a href="/Spirit/mobile_industry_report_2013.html">2013移动互联网行业报告 <sup><span class="label label-success label-lg">new</span></sup></a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+              <li><a data-toggle="modal" data-target="#myModal" href="javascript:;">关于Spirit</a></li>
+              <li><a target="_blank" href="http://www.alloyteam.com/about/">关于我们</a></li>
+          </ul>
+        </nav>
+    </div>
+</header>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/Spirit/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/Spirit/bootstrap3/js/bootstrap.min.js"></script>
+<script src="/Spirit/js/common.js"></script>
+
+  <style>
+    .help-pos-rel {
+        position: relative;
+    }
+    .section {
+        position: relative;
+    }
+    .demo_block {
+        min-height: 200px;
+    }
+    .ui-corner-tag {
+        display: inline-block;
+    }
+
+
+    /* 清除 pro.css 与 bootstrap.css 的冲突 */
+    .ui-action-sheet .btn {
+        display: block;
+    }
+    .ui-corner-tag [class*="ui-tag-"] {
+        box-sizing: content-box;
+    }
+</style>
+
+<link rel="stylesheet" href="./css/pro.css" />
+<link rel="stylesheet" href="/Spirit/css/prism.css" />
+
+<script src="./vendor/zeptojs/zepto.js"></script>
+
+<script>
+    // TOTO
+    window.$ = Zepto;
+    $.os = {};
+    $.isPoorDevice = false;
+    $.env = {};
+    $.emptyFunction = Zepto.emptyFunction = function () {console.log('emptyFunction')};
+</script>
+
+<script src="./js/util.js"></script>
+<script src="./js/core.js"></script>
+
+<script src="./js/action-sheet.js"></script>
+<script src="./js/bouncefix.js"></script>
+<!--<script src="./js/carousel.js"></script>-->
+<script src="./js/dialog.js"></script>
+<script src="./js/dot.js"></script>
+<script src="./js/lazyload.js"></script>
+<script src="./js/loading.js"></script>
+<script src="./js/mask.js"></script>
+<script src="./js/mult-selector.js"></script>
+<script src="./js/page-loading.js"></script>
+<script src="./js/rich-loading.js"></script>
+<script src="./js/scrollTo.js"></script>
+<script src="./js/state.js"></script>
+<script src="./js/tab.js"></script>
+<script src="./js/text-loading.js"></script>
+<script src="./js/toast.js"></script>
+
+
+
+<section id="pro" class="container row">
+
+    <div class="col-md-3">
+        <div id="sidebar" class="my_sidebar affix">
+            <ul class="nav">
+                <!--<li class="sidebar_head_li"><a href="#buttons">Buttons</a></li>-->
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+
+        <div id="base" class="section">
+            <h2>base</h2>
+            <p>提供一些基础样式</p>
+            <div class="demo_block">
+                <div class="ui-clear-fix">清除浮动</div>
+                <div class="ui-border-1px">模拟1px边框</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>word wrap</h3>
+            <p>文字超长显示省略号</p>
+            <div class="demo_block">
+                <p class="ui-no-wrap">单行文字超长显示省略号 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur dolor dolorem error, et excepturi explicabo fugit incidunt magni necessitatibus non placeat quas, quasi rem repellendus repudiandae, sit totam veritatis.</p>
+                <p class="ui-multi-no-wrap">多行文字超长显示省略号 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur corporis cupiditate eos error ex expedita fugiat harum ipsam iste nihil nulla numquam, quae quas qui repudiandae ut velit voluptatum?</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>font color</h2>
+            <p>字体颜色</p>
+            <div class="demo_block">
+                <span class="ui-color-white">白色</span>
+                <span class="ui-color-black">黑色</span>
+                <span class="ui-color-gray">灰色</span>
+                <span class="ui-color-blue">蓝色</span>
+                <span class="ui-color-red">红色</span>
+                <span class="ui-color-orange">橙色</span>
+            </div>
+        </div>
+
+
+        <div id="buttons" class="section">
+            <h2>Buttons</h2>
+            <p>ProUI提供了基础样式，使用下面的class，可以快速的建立带有样式的按钮。</p>
+            <div class="demo_block">
+                <a class="ui-btn ui-btn-white">白色按钮</a>
+                <a class="ui-btn ui-btn-red">红色按钮</a>
+                <a class="ui-btn ui-btn-blue">蓝色按钮</a>
+                <a class="ui-btn ui-btn-orange">橙色按钮</a>
+                <a class="ui-btn" disable>禁用按钮</a>
+
+                <a class="ui-btn ui-btn-orange">
+                    <span class="icon">123</span>
+                    <span class="text">按钮中含图案和文字</span>
+                </a>
+            </div>
+        </div>
+
+
+        <div id="block-buttons" class="section">
+            <h3>Block Buttons</h3>
+            <div class="demo_block">
+                <a class="ui-btn-block ui-btn-white">白色按钮</a>
+                <a class="ui-btn-block ui-btn-red">红色按钮</a>
+                <a class="ui-btn-block ui-btn-blue">蓝色按钮</a>
+                <a class="ui-btn-block ui-btn-orange">橙色按钮</a>
+                <a class="ui-btn-block" disable>禁用按钮</a>
+
+                <a class="ui-btn-block ui-btn-orange">
+                    <span class="icon">123</span>
+                    <span class="text">按钮中含图案和文字</span>
+                </a>
+            </div>
+        </div>
+
+        <div id="layout" class="section">
+            <h2>layout</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+                <!--<div class="ui-app">-->
+                    <!--<div class="ui-header">固定的头部</div>-->
+                    <!--<div class="ui-content-container">内容</div>-->
+                    <!--<div class="ui-footer">固定的尾部</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+
+
+        <div id="icon" class="section">
+            <h2>icon</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+                <div><i class="ui-icon"></i>收藏</div>
+                <div><i class="ui-icon ui-bg-default"></i>背景</div>
+                <div><i class="ui-icon ui-icon-arrow"></i>箭头</div>
+                <div><i class="ui-icon ui-icon-arrow ui-arrow-big"></i>大箭头</div>
+
+                <div>向下<i class="ui-icon ui-icon-arrow ui-arrow-down"></i></div>
+                <div>向右<i class="ui-icon ui-icon-arrow ui-arrow-right"></i></div>
+            </div>
+        </div>
+
+        <div id="corner-tag" class="section">
+            <h2>corner-tag</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+                <div class="ui-corner-tag">
+                    <img src="./img/inline/share-qq.png"/>
+                    <div class="ui-tag-red">红</div>
+                </div>
+                <div class="ui-corner-tag">
+                    <img src="./img/inline/share-qq.png"/>
+                    <div class="ui-tag-orange">橙</div>
+                </div>
+
+                <div class="ui-corner-tag">
+                    <img src="./img/inline/share-qq.png"/>
+                    <div class="ui-tag-blue">蓝</div>
+                </div>
+                <div class="ui-corner-tag">
+                    <img src="./img/inline/share-qq.png"/>
+                    <div class="ui-tag-green">绿</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dot" class="section">
+            <h2 >dot</h2>
+            <p>11111</p>
+            <div class="demo_block">
+                <div class="help-pos-rel well">
+                    红色数字右上角
+                    <div class="ui-dot-num ui-dot-red ui-dot-tr">1</div>
+                </div>
+                <div class="help-pos-rel well">
+                    蓝色数字右上角
+                    <div class="ui-dot-num ui-dot-blue ui-dot-tr">1</div>
+                </div>
+                <div class="help-pos-rel well">
+                    蓝色数字右上角
+                    <div class="ui-dot-num ui-dot-blue ui-dot-tr">88</div>
+                </div>
+                <div class="help-pos-rel well">
+                    红色new右上角
+                    <div class="ui-dot-new ui-dot-red ui-dot-tr">99</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="dialog" class="section">
+            <h2>dialog</h2>
+            <p>222</p>
+            <div class="demo_block" style="min-height: 200px;">
+                <div class="ui-dialog js-before-show js-effect js-show" style="display: block; position: absolute; z-index: 0;">
+                    <div class="body ui-color-black">
+                        <div class="title" style="display: block;">提示</div>
+                        <div class="content">内容内容内容内容内容内容</div>
+                    </div>
+                    <div class="btns ui-border-1px ui-color-blue">
+                        <div class="btn">取消</div>
+                        <div class="btn ui-border-1px" style="display: block;">确定</div>
+                    </div>
+                </div>
+            </div>
+            <div class="demo-action">
+                <a class="action-show ui-btn ui-btn-orange">显示</a>
+            </div>
+            <script>
+                ;(function (){
+                    var func0 = function () {
+                        alert('哇哦，真的不喜欢我？');
+                    };
+                    var func1 = function () {
+                        alert('哇哦，我也喜欢你！');
+                    };
+                    var opts = {
+                        mask: true,
+                        animation: true,
+                        tapHide: true,
+                        preventScroll: true,
+                        title: '提示',
+                        content: '你喜欢我么？',
+                        btnText: ['不喜欢', '超喜欢'],
+                        btnHandle: [func0, func1]
+                    };
+                    $('#dialog').on('click', '.action-show',function (){
+                        pro.dialog.show(opts);
+                    });
+                })();
+            </script>
+        </div>
+
+        <div id="action-sheet" class="section">
+            <h2>action-sheet</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+                <div class="ui-action-sheet js-effect js-show" style="display: block; position: absolute;z-index: 0;">
+                    <ul class="content">
+                        <li class="ui-color-blue ui-border-1px btn" data-dismiss="true">我喜欢你</li>
+                        <li class="ui-color-blue ui-border-1px btn" data-dismiss="true">我不喜欢你</li>
+                    </ul>
+                    <div class="ui-color-blue btn btn-cancel" data-cmd="as-cancel" data-dismiss="true">取消</div>
+                </div>
+            </div>
+            <div class="demo-action">
+                <a class="action-show ui-btn ui-btn-orange">显示</a>
+            </div>
+            <script>
+                ;(function (){
+                    var func0 = function () {
+                        alert('么么哒!');
+                    };
+                    var func1 = function () {
+                        alert('为啥不要啊?');
+                    };
+                    var opts = {
+                        mask: true,
+                        animation: true,
+                        tapHide: true,
+                        preventScroll: true,
+                        content: ['我喜欢你', '我不喜欢你'],
+                        btnHandle: [func0, func1]
+                    };
+                    $('#action-sheet').on('click', '.action-show', function (){
+                        pro.actionSheet.show(opts);
+                    });
+                })();
+            </script>
+        </div>
+
+        <div id="pageLoading" class="section">
+            <h3>page loading</h3>
+            <p></p>
+            <div class="demo_block">
+            </div>
+            <div class="demo-action">
+                <a class="action-show ui-btn ui-btn-orange">显示</a>
+                <a class="action-hide ui-btn ui-btn-orange">关闭</a>
+            </div>
+            <script>
+                ;(function (){
+                    $('#pageLoading').on('click', '.action-show', function (){
+                        pro.pageLoading.show();
+                    });
+                    $('#pageLoading').on('click', '.action-hide', function (){
+                        pro.pageLoading.hide();
+                    });
+                })();
+            </script>
+        </div>
+
+        <div id="textLoading" class="section">
+            <h3>text loading</h3>
+            <p></p>
+            <div class="demo_block">
+            </div>
+            <div class="demo-action">
+                <a class="action-show ui-btn ui-btn-orange">显示</a>
+                <a class="action-hide ui-btn ui-btn-orange">关闭</a>
+            </div>
+            <script>
+                ;(function (){
+                    var opts = {
+                        content: '拼命加载中...'
+                    };
+
+                    $('#textLoading').on('click', '.action-show', function (){
+                        pro.textLoading.show(opts);
+                    });
+                    $('#textLoading').on('click', '.action-hide', function (){
+                        pro.textLoading.hide(opts);
+                    });
+                })();
+            </script>
+        </div>
+
+        <div id="richLoading" class="section">
+            <h3>rich loading</h3>
+            <p></p>
+            <div class="demo_block">
+            </div>
+            <div class="demo-action">
+                <a class="action-show ui-btn ui-btn-orange">显示</a>
+                <a class="action-hide ui-btn ui-btn-orange">关闭</a>
+            </div>
+            <script>
+                ;(function (){
+                    var opts = {
+                        preventScroll: true,
+                        content: '我也在拼命加载中...',
+                        onClose: function (){alert('哎呀, 我被关闭了,心好痛!')}
+                    };
+                    $('#richLoading').on('click', '.action-show', function (){
+                        pro.richLoading.show(opts);
+                    });
+                    $('#richLoading').on('click', '.action-hide', function (){
+                        pro.richLoading.hide(opts);
+                    });
+                })();
+            </script>
+        </div>
+
+
+        <div id="mult-selector" class="section">
+            <h2>mult-selector</h2>
+            <p></p>
+            <div class="demo_block">
+                <div class="js-navtree"></div>
+            </div>
+            <div class="demo-action">
+                <a class="action-show ui-btn ui-btn-orange">显示</a>
+                <a class="action-hide ui-btn ui-btn-orange">显示</a>
+            </div>
+            <style>
+                .js-navtree{
+                    height: 48px;
+                    position: relative;
+                    /*z-index: 10001;*/
+                    z-index: 0;
+                }
+            </style>
+            <script>
+                ;(function (){
+                    var children = [
+                        {
+                            defaultParent : "福田区",
+                            defaultChild : "梅林",
+                            tree : [
+                                ["全部商圈"],
+                                ["福田区&futian", ["荔枝公园片区","梅林","八卦岭/园岭","华强北","皇岗","沙头","香蜜湖","市中心区","华强南","车公庙","新洲","石厦","景田","岗厦","市民中心","上沙/下沙","竹子林","福田保税区"]],
+                                ["南山区&nanshan", ["南头","华侨城","蛇口","科技园","南油","西丽","南山中心区","前海","白石洲"]],
+                                ["福田区&futian", ["荔枝公园片区","梅林","八卦岭/园岭","华强北","皇岗","沙头","香蜜湖","市中心区","华强南","车公庙","新洲","石厦","景田","岗厦","市民中心","上沙/下沙","竹子林","福田保税区"]],
+                                ["南山区&nanshan", ["南头","华侨城","蛇口","科技园","南油","西丽","南山中心区","前海","白石洲"]],
+                                ["福田区&futian", ["荔枝公园片区","梅林","八卦岭/园岭","华强北","皇岗","沙头","香蜜湖","市中心区","华强南","车公庙","新洲","石厦","景田","岗厦","市民中心","上沙/下沙","竹子林","福田保税区"]],
+                                ["南山区&nanshan", ["南头","华侨城","蛇口","科技园","南油","西丽","南山中心区","前海","白石洲"]],
+                                ["福田区&futian", ["荔枝公园片区","梅林","八卦岭/园岭","华强北","皇岗","沙头","香蜜湖","市中心区","华强南","车公庙","新洲","石厦","景田","岗厦","市民中心","上沙/下沙","竹子林","福田保税区"]],
+                                ["南山区&nanshan", ["南头","华侨城","蛇口","科技园","南油","西丽","南山中心区","前海","白石洲"]],
+                                ["福田区&futian", ["荔枝公园片区","梅林","八卦岭/园岭","华强北","皇岗","沙头","香蜜湖","市中心区","华强南","车公庙","新洲","石厦","景田","岗厦","市民中心","上沙/下沙","竹子林","福田保税区"]],
+                                ["南山区&nanshan", ["南头","华侨城","蛇口","科技园","南油","西丽","南山中心区","前海","白石洲"]],
+                                ["福田区&futian", ["荔枝公园片区","梅林","八卦岭/园岭","华强北","皇岗","沙头","香蜜湖","市中心区","华强南","车公庙","新洲","石厦","景田","岗厦","市民中心","上沙/下沙","竹子林","福田保税区"]],
+                                ["南山区&nanshan", ["南头","华侨城","蛇口","科技园","南油","西丽","南山中心区","前海","白石洲"]]
+                            ]
+                        },
+                        {
+                            defaultParent : "全部分类",
+                            defaultChild : "",
+                            tree : [
+                                ["全部分类"],
+                                ["美食&meishi", ["粤菜","火锅","小吃快餐","西餐","面包甜点","川菜","自助餐","日本菜","韩国料理","湘菜","海鲜","茶餐厅","烧烤","西北菜","东北菜","清真菜"]],
+                                ["娱乐&yule", ["电影","KTV","景点门票","咖啡厅","洗浴","足疗按摩","酒吧","公园","茶馆","游乐游艺","DIY手工坊","桌面游戏"]]
+                            ]
+                        },
+                        {
+                            defaultParent : "默认排序",
+                            defaultChild : "",
+                            tree : ["默认排序&yule", "附近优先&yule", "人气最高&yule", "价格最低&yule", "价格最高&yule"]
+                        }
+                    ];
+
+                    $(".js-navtree").multSelector({
+                        selected : ["福田区", "全部分类", "默认排序"],
+                        option : children,
+                        onSelect : function (dat) {
+                            console.log(dat)
+                        }
+                    });
+
+                    // $(".js-navtree").navtree("add", {})
+                })();
+            </script>
+        </div>
+
+
+        <div id="tab" class="section">
+            <h2>tab</h2>
+            <p></p>
+            <div class="demo_block">
+                <div id="tab-demo">
+                    <div id="tab-demo">
+                        <ul class="ui-tab">
+                            <li class="item js-active">tab-1</li>
+                            <li class="item">tab-2</li>
+                        </ul>
+                        <ul class="tab-content">
+                            <li class="panel-1">1111111111111111111</li>
+                            <li class="panel-2" style="display: none;">2222222222222222</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script>
+                ;(function (){
+                    $('#tab-demo').tab({
+                        $el: '.ui-tab',
+                        relateSelector: ['.panel-1', '.panel-2'],
+                        onSwitchTab: function(index, item){}
+                    });
+                })();
+            </script>
+        </div>
+
+
+
+        <div id="toast" class="section">
+            <h2>toast</h2>
+            <p></p>
+            <div class="demo_block">
+            </div>
+            <div class="demo-action">
+                <a class="action-show ui-btn ui-btn-orange">显示</a>
+                <a class="action-show ui-btn ui-btn-orange">隐藏</a>
+            </div>
+            <script>
+                ;(function (){
+                    var opts = {
+                        animation: true,
+                        preventScroll: true,
+                        state: 'warning',	// 三种状态 warning，tips，success，参见 http://waltz.cdc.com/mqq.html#3539
+                        content: '哇!这是警告!我在2s后就会消失?',
+                        duration: 2000
+                    };
+                    $('#toast').on('click', '.action-show', function (){
+                        pro.toast.show(opts);
+                    });
+                })();
+            </script>
+        </div>
+
+        <div id="xxxxx" class="section">
+            <h2>xxxxx</h2>
+            <p>ddddddd</p>
+            <div class="demo_block">
+            </div>
+            <div class="demo-action">
+                <a class="action-show ui-btn ui-btn-orange">显示</a>
+                <a class="action-show ui-btn ui-btn-orange">隐藏</a>
+            </div>
+            <script>
+                ;(function (){
+                    $('#xxxxx').on('click', '.action-show', function (){
+
+                    });
+                })();
+            </script>
+        </div>
+
+    </div>
+</section>
+
+<script type="text/javascript" src="/Spirit/js/prism.js"></script>
+
+<textarea id="tpl-panel" class="hide">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    Example
+                </h4>
+            </div>
+            <div class="panel-body code-result">
+                // code here
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse"  data-parent="#buttons-demo" href="#id-markup">
+                        (点击伸缩代码)
+                    </a>
+                </h4>
+            </div>
+            <div id="id-markup" class="code-source panel-collapse collapse">
+                <div class="panel-body">
+                        <pre class="language-markup">
+                            <code>
+                            // html code here
+                            </code>
+                        </pre>
+                         <pre class="language-javascript">
+                            <code>
+
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+</textarea>
+
+<script>
+    function htmlEncode(str)
+    {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&/g, "&gt;");
+        s = s.replace(/</g, "&lt;");
+        s = s.replace(/>/g, "&gt;");
+        s = s.replace(/ /g, "&nbsp;");
+        s = s.replace(/\'/g, "&#39;");
+        s = s.replace(/\"/g, "&quot;");
+        s = s.replace(/\n/g, "<br>");
+        return s;
+    }
+
+    function htmlDecode(str)
+    {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&gt;/g, "&");
+        s = s.replace(/&lt;/g, "<");
+        s = s.replace(/&gt;/g, ">");
+        s = s.replace(/&nbsp;/g, " ");
+        s = s.replace(/&#39;/g, "\'");
+        s = s.replace(/&quot;/g, "\"");
+        s = s.replace(/<br>/g, "\n");
+        return s;
+    }
+
+    Zepto(function ($) {
+        var lis = '';
+        $('.section').each(function (index, item) {
+            var content = $(this).find('.demo_block');
+            var tpl = $($('#tpl-panel').val());
+            var id = $(this).attr('id');
+            var parentId = id + '-demo';
+            var script = $(this).find('script').html();
+            var markup = $(this).find('.demo_block').html();
+            markup = htmlEncode(markup);
+            markup = markup ? markup : '无 HTML 代码';
+            script = script ? script : '无 Javascript 代码';
+
+            $(this).append(tpl);
+            $(tpl).attr('id', parentId);
+            $(tpl).find('.panel-body.code-result').html(content);
+            $(tpl).find('[data-toggle="collapse"]').data('parent', '#'+parentId);
+            $(tpl).find('[data-toggle="collapse"]').attr('href', '#'+id+'-code');
+            $(tpl).find('.code-source').attr('id', id+'-code');
+
+            $(tpl).find('.language-markup code').html(markup);
+            $(tpl).find('.language-javascript code').html(script);
+            lis += '<li class="sidebar_head_li"><a href="#'+ id + '">'+ id +'</a></li>';
+        });
+
+        $('#sidebar').find('.nav').append(lis);
+    });
+
+</script>
+<script type="text/javascript" src="/Spirit/js/prism.js"></script>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">关于Spirit</h4>
+      </div>
+      <div class="modal-body">
+        <p>Spirit（勇气号），美国航天局NASA派往Mars（火星）的第一艘探测器。</p>
+        <p>移动Web开发是一块新的领域，甚至有很多坑，这一点与人类从未踏上的Mars（火星）相似。为了避免开发者重复遇到相同的问题，我们创建了Mars项目（<a target="_blank" href="https://github.com/AlloyTeam/Mars">view on Github</a>），收集与归纳移动Web开发中常见的问题。</p>
+        <p>Spirit正是为了Mars而生，Mars项目中归纳的问题，会放到Spirit中解决，并沉淀到开发工具（JM与JMUI）以及开发规范中，真正建立移动Web开发的集成解决方案。</p>
+        <p>如果你也在移动Web遇到了问题，请到<a target="_blank" href="https://github.com/AlloyTeam/Mars">Mars项目</a>提交Issue。<span class="glyphicon glyphicon-heart-empty"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+  <div class="footer">
+    <div class="container text-center">
+        <p><a href="http://alloyteam.github.io/Spirit/MIT-LICENSE.txt">开源协议</a> | <a target="_blank" href="https://github.com/AlloyTeam/Spirit/issues/new">反馈意见</a></p>
+        <p>© 2011-2014 <a target="_blank" href="http://www.alloyteam.com/">Tencent Alloyteam</a>. All Rights Reserved. Powered by <a target="_blank" href="http://zespia.tw/hexo/">Hexo</a></p>
+    </div>
+</div>
+
+  <!--Tencent Analytics-->
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=24711241" charset="UTF-8"></script>
+<!--Google Analytics-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23019343-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>

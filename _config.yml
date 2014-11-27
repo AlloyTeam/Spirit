@@ -12,8 +12,8 @@ language:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://alloyteam.github.io
-root: /Spirit/
+url: http://laispace.github.io/Spirit/deploy/
+root: /Spirit/deploy
 permalink: :title.html
 tag_dir: tags
 category_dir: categories
@@ -67,5 +67,4 @@ markdown:
 ## Docs: http://zespia.tw/hexo/docs/deployment.html
 deploy:
   type: github
-  repo: https://github.com/AlloyTeam/Spirit.git
-  branch: gh-pages
+  repo: https://github.com/laispace/Spirit.git
