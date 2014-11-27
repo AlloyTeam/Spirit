@@ -1,6 +1,12 @@
 {
   "name": "hexo",
-  "version": "2.4.5",
+  "version": "2.4.3",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "hexo-generator-minify": "^0.1.0",
+    "hexo-renderer-ejs": "*",
+    "hexo-renderer-marked": "*",
+    "hexo-renderer-stylus": "*",
+    "moment": "^2.8.1"
+  }
 }

@@ -1,0 +1,121 @@
+/* General button styles
+-------------------------------------------------- */
+.btn{
+    -webkit-user-select: none;
+    -webkit-box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    min-width: 130px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    border-radius: 6px;
+    /* 描边 */
+    /*border: solid 1px;*/
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    -webkit-text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    /* Horizontal Length: 0; Vertical Length: 1px; Blur Radius: 2px;*/
+    /*box-shadow: inset 0 0 1px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .3), 0 1px 2px -1px rgba(0, 0, 0, .7);*/
+    /*-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .3), 0 1px 2px -1px rgba(0, 0, 0, .7);*/
+
+    /*-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .08);*/
+    /*-webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 0 rgba(0, 0, 0, .08);*/
+    /*-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, .1), 0 1px 1px rgba(255, 255, 255, .17);*/
+    
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
+    padding: 7px 14px;
+    font-size: 18px;
+    line-height: 29px;
+}
+
+
+/* White button */
+.btn-info {
+    color: #333;
+    /* 兼容非 webkit 内核 */
+    background: #d0d6da;
+    /* 渐变叠加 */
+    background: -webkit-gradient(linear, center top, center bottom, from(#f0f2f4), to(#d0d6da));
+    background: -webkit-linear-gradient(#f0f2f4, #d0d6da);
+    text-shadow: none;
+    -webkit-text-shadow: none;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .4), 0 1px 2px rgba(0, 0, 0, .4);
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .4), 0 1px 0 rgba(0, 0, 0, .2);
+}
+
+/* Green button  */
+.btn-primary {
+    /* 兼容非 webkit 内核 */
+    background: #2ba136;
+    /* hack for Android 部分机型，如果不强制指定字体颜色，有时会显示为默认的字体颜色*/
+    color: #fff;
+    /* 渐变叠加 */
+    background: -webkit-gradient(linear, center top, center bottom, from(#49d256), to(#2ba136));
+    background: -webkit-linear-gradient(#49d256, #2ba136);
+}
+
+/* Red button */
+.btn-danger {
+    /* 兼容非 webkit 内核 */
+    background: #cc2514;
+    /* hack for Android 部分机型，如果不强制指定字体颜色，有时会显示为默认的字体颜色*/
+    color: #fff;
+    /* 渐变叠加 */
+    background: -webkit-gradient(linear, center top, center bottom, from(#fa4936), to(#cc2514));
+    
+    background: -webkit-linear-gradient(#fa4936, #cc2514);
+}
+
+/* Active state for buttons with modifiers */
+.btn-info:active,
+.btn-primary:active,
+.btn-danger:active {
+    color: #fff;
+}
+
+.btn-info:active {
+    color: #333;
+    /* 渐变叠加 */
+    background: -webkit-linear-gradient(top, #d0d6da 0, #e6eaec 100%);
+    background: linear-gradient(to bottom, #d0d6da 0, #e6eaec 100%);
+}
+
+.btn-primary:active {
+    /* 渐变叠加 */
+    background: -webkit-linear-gradient(top, #2ba136 0, #3dbe4a 100%);
+    background: linear-gradient(to bottom, #2ba136 0, #3dbe4a 100%);
+}
+
+.btn-danger:active {
+    /* 渐变叠加 */
+    background: -webkit-linear-gradient(top, #cc2514 0, #e73b29 100%);
+    background: linear-gradient(to bottom, #cc2514 0, #e73b29 100%);
+}
+
+/* Block level buttons (full width buttons) */
+.btn-block {
+    display: block;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+/* Make button elements go full width when given .button-block class */
+button.btn-block {
+    width: 100%;
+}
+
+.btn-disabled,
+.btn-disabled:active {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+    text-shadow: none
+}
+
