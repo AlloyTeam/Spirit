@@ -45,11 +45,11 @@
 }
 
 .ui-icon-warning{
-    background-image: url(../../../img/inline/warning.png?embed);
+    background-image: url(./../img/inline/warning.png?embed);
 }
 .ui-icon-tips{
-    background-image: url(../../../img/inline/tips.png?embed);
+    background-image: url(./../img/inline/tips.png?embed);
 }
 .ui-icon-success{
-    background-image: url(../../../img/inline/success.png?embed);
+    background-image: url(./../img/inline/success.png?embed);
 }

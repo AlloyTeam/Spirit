@@ -37,7 +37,7 @@
     width: 13px;
     height: 13px;
 
-    background-image: url(../../../img/inline/search.png?embed);
+    background-image: url(./../img/inline/search.png?embed);
 }
 
 .ui-search-input{
