@@ -84,6 +84,7 @@
 <script src="/Spirit/js/common.js"></script>
 
   <style>
+    /* demo 用辅助样式 */
     .help-pos-rel {
         position: relative;
     }
@@ -96,7 +97,7 @@
     .ui-corner-tag {
         display: inline-block;
     }
-
+    .markup-code {display: none}
 
     /* 清除 pro.css 与 bootstrap.css 的冲突 */
     .ui-action-sheet .btn {
@@ -106,12 +107,9 @@
         box-sizing: content-box;
     }
 </style>
-
 <link rel="stylesheet" href="./css/pro.css" />
 <link rel="stylesheet" href="/Spirit/css/prism.css" />
-
 <script src="./vendor/zeptojs/zepto.js"></script>
-
 <script>
     // TOTO
     window.$ = Zepto;
@@ -120,10 +118,8 @@
     $.env = {};
     $.emptyFunction = Zepto.emptyFunction = function () {console.log('emptyFunction')};
 </script>
-
 <script src="./js/util.js"></script>
 <script src="./js/core.js"></script>
-
 <script src="./js/action-sheet.js"></script>
 <script src="./js/bouncefix.js"></script>
 <!--<script src="./js/carousel.js"></script>-->
@@ -149,35 +145,35 @@
         <div id="sidebar" class="my_sidebar affix">
             <ul class="nav">
                 <!--<li class="sidebar_head_li"><a href="#buttons">Buttons</a></li>-->
-
             </ul>
         </div>
     </div>
 
     <div class="col-md-9">
 
+        <div id="template" class="section">
+            <h2>Template</h2>
+            <p>快速开始</p>
+            <div class="demo_block">
+
+            </div>
+            <pre class="markup-code">
+                <code>
+                    
+                </code> 
+            </pre>
+        </div>
+
         <div id="base" class="section">
-            <h2>base</h2>
+            <h2>Base</h2>
             <p>提供一些基础样式</p>
             <div class="demo_block">
                 <div class="ui-clear-fix">清除浮动</div>
                 <div class="ui-border-1px">模拟1px边框</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3>word wrap</h3>
-            <p>文字超长显示省略号</p>
-            <div class="demo_block">
-                <p class="ui-no-wrap">单行文字超长显示省略号 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur dolor dolorem error, et excepturi explicabo fugit incidunt magni necessitatibus non placeat quas, quasi rem repellendus repudiandae, sit totam veritatis.</p>
-                <p class="ui-multi-no-wrap">多行文字超长显示省略号 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur corporis cupiditate eos error ex expedita fugiat harum ipsam iste nihil nulla numquam, quae quas qui repudiandae ut velit voluptatum?</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>font color</h2>
-            <p>字体颜色</p>
-            <div class="demo_block">
+                <div class="demo_block">
+                    <p class="ui-no-wrap">单行文字超长显示省略号 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur dolor dolorem error, et excepturi explicabo fugit incidunt magni necessitatibus non placeat quas, quasi rem repellendus repudiandae, sit totam veritatis.</p>
+                    <p class="ui-multi-no-wrap">多行文字超长显示省略号 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur corporis cupiditate eos error ex expedita fugiat harum ipsam iste nihil nulla numquam, quae quas qui repudiandae ut velit voluptatum?</p>
+                </div>
                 <span class="ui-color-white">白色</span>
                 <span class="ui-color-black">黑色</span>
                 <span class="ui-color-gray">灰色</span>
@@ -185,8 +181,23 @@
                 <span class="ui-color-red">红色</span>
                 <span class="ui-color-orange">橙色</span>
             </div>
+            <pre class="markup-code">
+                <code>
+                    &lt;div class="ui-clear-fix">清除浮动&lt;/div&gt;
+                    &lt;div class="ui-border-1px"&gt;模拟1px边框&lt;/div&gt;
+                    &lt;div class="demo_block"&gt;
+                        &lt;p class="ui-no-wrap"&gt;单行文字超长显示省略号 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur dolor dolorem error, et excepturi explicabo fugit incidunt magni necessitatibus non placeat quas, quasi rem repellendus repudiandae, sit totam veritatis.&lt;/p&gt;
+                        &lt;p class="ui-multi-no-wrap"&gt;多行文字超长显示省略号 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur corporis cupiditate eos error ex expedita fugiat harum ipsam iste nihil nulla numquam, quae quas qui repudiandae ut velit voluptatum?&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;span class="ui-color-white"&gt;白色&lt;/span&gt;
+                    &lt;span class="ui-color-black"&gt;黑色&lt;/span&gt;
+                    &lt;span class="ui-color-gray"&gt;灰色&lt;/span&gt;
+                    &lt;span class="ui-color-blue"&gt;蓝色&lt;/span&gt;
+                    &lt;span class="ui-color-red"&gt;红色&lt;/span&gt;
+                    &lt;span class="ui-color-orange"&gt;橙色&lt;/span&gt;
+                </code> 
+            </pre>
         </div>
-
 
         <div id="buttons" class="section">
             <h2>Buttons</h2>
@@ -197,14 +208,25 @@
                 <a class="ui-btn ui-btn-blue">蓝色按钮</a>
                 <a class="ui-btn ui-btn-orange">橙色按钮</a>
                 <a class="ui-btn" disable>禁用按钮</a>
-
                 <a class="ui-btn ui-btn-orange">
                     <span class="icon">123</span>
                     <span class="text">按钮中含图案和文字</span>
                 </a>
             </div>
+            <pre class="markup-code">
+               <code>
+                    &lt;a class="ui-btn ui-btn-white">白色按钮&lt;/a&gt;
+                    &lt;a class="ui-btn ui-btn-red"&gt;红色按钮&lt;/a&gt;
+                    &lt;a class="ui-btn ui-btn-blue"&gt;蓝色按钮&lt;/a&gt;
+                    &lt;a class="ui-btn ui-btn-orange"&gt;橙色按钮&lt;/a&gt;
+                    &lt;a class="ui-btn" disable&gt;禁用按钮&lt;/a&gt;
+                    &lt;a class="ui-btn ui-btn-orange"&gt;
+                        &lt;span class="icon"&gt;123&lt;/span&gt;
+                        &lt;span class="text"&gt;按钮中含图案和文字&lt;/span&gt;
+                    &lt;/a&gt;
+                </code> 
+            </pre>
         </div>
-
 
         <div id="block-buttons" class="section">
             <h3>Block Buttons</h3>
@@ -214,30 +236,73 @@
                 <a class="ui-btn-block ui-btn-blue">蓝色按钮</a>
                 <a class="ui-btn-block ui-btn-orange">橙色按钮</a>
                 <a class="ui-btn-block" disable>禁用按钮</a>
-
                 <a class="ui-btn-block ui-btn-orange">
                     <span class="icon">123</span>
                     <span class="text">按钮中含图案和文字</span>
                 </a>
             </div>
+            <pre class="markup-code">
+                <code>
+                    &lt;a class="ui-btn-block ui-btn-white"&gt;白色按钮&lt;/a&gt;
+                    &lt;a class="ui-btn-block ui-btn-red"&gt;红色按钮&lt;/a&gt;
+                    &lt;a class="ui-btn-block ui-btn-blue"&gt;蓝色按钮&lt;/a&gt;
+                    &lt;a class="ui-btn-block ui-btn-orange"&gt;橙色按钮&lt;/a&gt;
+                    &lt;a class="ui-btn-block" disable&gt;禁用按钮&lt;/a&gt;
+                    &lt;a class="ui-btn-block ui-btn-orange"&gt;
+                        &lt;span class="icon"&gt;123&lt;/span&gt;
+                        &lt;span class="text"&gt;按钮中含图案和文字&lt;/span&gt;
+                    &lt;/a&gt;
+                </code> 
+            </pre>
         </div>
 
         <div id="layout" class="section">
             <h2>layout</h2>
-            <p>ddddddd</p>
+            <p></p>
             <div class="demo_block">
-                <!--<div class="ui-app">-->
-                    <!--<div class="ui-header">固定的头部</div>-->
-                    <!--<div class="ui-content-container">内容</div>-->
-                    <!--<div class="ui-footer">固定的尾部</div>-->
-                <!--</div>-->
+                <div class="ui-app">
+                    <div class="ui-header">固定的头部</div>
+                    <div class="ui-content-container">
+                        内容 <br/>
+                        内容内容 <br/>
+                        内容内容内容 <br/>
+                        内容内容内容内容 <br/>
+                        内容内容内容内容内容
+                    </div>
+                    <div class="ui-footer">固定的尾部</div>
+                </div>
             </div>
+            <pre class="markup-code">
+                <code>
+                    &lt;div class="ui-app"&gt;
+                        &lt;div class="ui-header"&gt;固定的头部&lt;/div&gt;
+                        &lt;div class="ui-content-container"&gt;
+                            内容 &lt;br/&gt;
+                            内容内容 &lt;br/&gt;
+                            内容内容内容 &lt;br/&gt;
+                            内容内容内容内容 &lt;br/&gt;
+                            内容内容内容内容内容
+                        &lt;/div&gt;
+                        &lt;div class="ui-footer"&gt;固定的尾部&lt;/div&gt;
+                    </div>
+                </code> 
+            </pre>
+            <style>
+                .ui-app > div {
+                    text-align: center;
+                }
+                .ui-header,
+                .ui-footer {
+                    position: absolute;left: 0;
+                    line-height: 48px;
+                }
+            </style>
         </div>
 
 
         <div id="icon" class="section">
             <h2>icon</h2>
-            <p>ddddddd</p>
+            <p></p>
             <div class="demo_block">
                 <div><i class="ui-icon"></i>收藏</div>
                 <div><i class="ui-icon ui-bg-default"></i>背景</div>
@@ -247,11 +312,21 @@
                 <div>向下<i class="ui-icon ui-icon-arrow ui-arrow-down"></i></div>
                 <div>向右<i class="ui-icon ui-icon-arrow ui-arrow-right"></i></div>
             </div>
+            <pre class="markup-code">
+                <code>
+                    &lt;div&gt;&lt;i class="ui-icon"&gt;&lt;/i&gt;收藏&lt;/div&gt;
+                    &lt;div&gt;&lt;i class="ui-icon ui-bg-default"&gt;&lt;/i&gt;背景&lt;/div&gt;
+                    &lt;div&gt;&lt;i class="ui-icon ui-icon-arrow"&gt;&lt;/i&gt;箭头&lt;/div&gt;
+                    &lt;div&gt;&lt;i class="ui-icon ui-icon-arrow ui-arrow-big"&gt;&lt;/i&gt;大箭头&lt;/div&gt;
+                    &lt;div&gt;向下&lt;i class="ui-icon ui-icon-arrow ui-arrow-down"&gt;&lt;/i&gt;&lt;/div&gt;
+                    &lt;div&gt;向右&lt;i class="ui-icon ui-icon-arrow ui-arrow-right"&gt;&lt;/i&gt;&lt;/div&gt;
+                </code> 
+            </pre>
         </div>
 
         <div id="corner-tag" class="section">
             <h2>corner-tag</h2>
-            <p>ddddddd</p>
+            <p></p>
             <div class="demo_block">
                 <div class="ui-corner-tag">
                     <img src="./img/inline/share-qq.png"/>
@@ -271,6 +346,27 @@
                     <div class="ui-tag-green">绿</div>
                 </div>
             </div>
+            <pre class="markup-code">
+                <code>
+                    &lt;div class="ui-corner-tag"&gt;
+                        &lt;img src="./img/inline/share-qq.png"/&gt;
+                        &lt;div class="ui-tag-red"&gt;红&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="ui-corner-tag"&gt;
+                        &lt;img src="./img/inline/share-qq.png"/&gt;
+                        &lt;div class="ui-tag-orange"&gt;橙&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="ui-corner-tag"&gt;
+                        &lt;img src="./img/inline/share-qq.png"/&gt;
+                        &lt;div class="ui-tag-blue"&gt;蓝&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="ui-corner-tag"&gt;
+                        &lt;img src="./img/inline/share-qq.png"/&gt;
+                        &lt;div class="ui-tag-green"&gt;绿&lt;/div&gt;
+                    &lt;/div&gt;
+                </code> 
+            </pre>
         </div>
 
         <div id="dot" class="section">
@@ -293,8 +389,27 @@
                     红色new右上角
                     <div class="ui-dot-new ui-dot-red ui-dot-tr">99</div>
                 </div>
-
             </div>
+            <pre class="markup-code">
+                <code>
+                    &lt;div class="help-pos-rel well"&gt;
+                        红色数字右上角
+                        &lt;div class="ui-dot-num ui-dot-red ui-dot-tr"&gt;1&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="help-pos-rel well"&gt;
+                        蓝色数字右上角
+                        &lt;div class="ui-dot-num ui-dot-blue ui-dot-tr"&gt;1&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="help-pos-rel well"&gt;
+                        蓝色数字右上角
+                        &lt;div class="ui-dot-num ui-dot-blue ui-dot-tr"&gt;88&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="help-pos-rel well"&gt;
+                        红色new右上角
+                        &lt;div class="ui-dot-new ui-dot-red ui-dot-tr"&gt;99&lt;/div&gt;
+                    &lt;/div&gt;
+                </code> 
+            </pre>
         </div>
 
         <div id="dialog" class="section">
@@ -312,6 +427,20 @@
                     </div>
                 </div>
             </div>
+            <pre class="markup-code">
+                <code>
+                    &lt;div class="ui-dialog js-before-show js-effect js-show" style="display: block; position: absolute; z-index: 0;"&gt;
+                        &lt;div class="body ui-color-black"&gt;
+                            &lt;div class="title" style="display: block;"&gt;提示&lt;/div&gt;
+                            &lt;div class="content"&gt;内容内容内容内容内容内容&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="btns ui-border-1px ui-color-blue"&gt;
+                            &lt;div class="btn"&gt;取消&lt;/div&gt;
+                            &lt;div class="btn ui-border-1px" style="display: block;"&gt;确定&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </code> 
+            </pre>
             <div class="demo-action">
                 <a class="action-show ui-btn ui-btn-orange">显示</a>
             </div>
@@ -342,7 +471,7 @@
 
         <div id="action-sheet" class="section">
             <h2>action-sheet</h2>
-            <p>ddddddd</p>
+            <p></p>
             <div class="demo_block">
                 <div class="ui-action-sheet js-effect js-show" style="display: block; position: absolute;z-index: 0;">
                     <ul class="content">
@@ -352,6 +481,17 @@
                     <div class="ui-color-blue btn btn-cancel" data-cmd="as-cancel" data-dismiss="true">取消</div>
                 </div>
             </div>
+            <pre class="markup-code">
+                <code>
+                    &lt;div class="ui-action-sheet js-effect js-show" style="display: block; position: absolute;z-index: 0;"&gt;
+                        &lt;ul class="content"&gt;
+                            &lt;li class="ui-color-blue ui-border-1px btn" data-dismiss="true"&gt;我喜欢你&lt;/li&gt;
+                            &lt;li class="ui-color-blue ui-border-1px btn" data-dismiss="true"&gt;我不喜欢你&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;div class="ui-color-blue btn btn-cancel" data-cmd="as-cancel" data-dismiss="true"&gt;取消&lt;/div&gt;
+                    &lt;/div&gt;
+                </code> 
+            </pre>
             <div class="demo-action">
                 <a class="action-show ui-btn ui-btn-orange">显示</a>
             </div>
@@ -383,6 +523,11 @@
             <p></p>
             <div class="demo_block">
             </div>
+            <pre class="markup-code">
+                <code>
+                    
+                </code> 
+            </pre>
             <div class="demo-action">
                 <a class="action-show ui-btn ui-btn-orange">显示</a>
                 <a class="action-hide ui-btn ui-btn-orange">关闭</a>
@@ -404,6 +549,11 @@
             <p></p>
             <div class="demo_block">
             </div>
+            <pre class="markup-code">
+                <code>
+                    
+                </code> 
+            </pre>
             <div class="demo-action">
                 <a class="action-show ui-btn ui-btn-orange">显示</a>
                 <a class="action-hide ui-btn ui-btn-orange">关闭</a>
@@ -429,6 +579,11 @@
             <p></p>
             <div class="demo_block">
             </div>
+            <pre class="markup-code">
+                <code>
+                    
+                </code> 
+            </pre>
             <div class="demo-action">
                 <a class="action-show ui-btn ui-btn-orange">显示</a>
                 <a class="action-hide ui-btn ui-btn-orange">关闭</a>
@@ -457,6 +612,11 @@
             <div class="demo_block">
                 <div class="js-navtree"></div>
             </div>
+            <pre class="markup-code">
+                <code>
+                     &lt;div class="js-navtree"&gt;&lt;/div&gt;
+                </code> 
+            </pre>
             <div class="demo-action">
                 <a class="action-show ui-btn ui-btn-orange">显示</a>
                 <a class="action-hide ui-btn ui-btn-orange">显示</a>
@@ -538,6 +698,22 @@
                     </div>
                 </div>
             </div>
+            <pre class="markup-code">
+                <code>
+                    &lt;div id="tab-demo"&gt;
+                        &lt;div id="tab-demo"&gt;
+                            &lt;ul class="ui-tab"&gt;
+                                &lt;li class="item js-active"&gt;tab-1&lt;/li&gt;
+                                &lt;li class="item"&gt;tab-2&lt;/li&gt;
+                            &lt;/ul&gt;
+                            &lt;ul class="tab-content"&gt;
+                                &lt;li class="panel-1"&gt;1111111111111111111&lt;/li&gt;
+                                &lt;li class="panel-2" style="display: none;"&gt;2222222222222222&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </code> 
+            </pre>
             <script>
                 ;(function (){
                     $('#tab-demo').tab({
@@ -556,6 +732,11 @@
             <p></p>
             <div class="demo_block">
             </div>
+            <pre class="markup-code">
+                <code>
+                    
+                </code> 
+            </pre>
             <div class="demo-action">
                 <a class="action-show ui-btn ui-btn-orange">显示</a>
                 <a class="action-show ui-btn ui-btn-orange">隐藏</a>
@@ -578,9 +759,14 @@
 
         <div id="xxxxx" class="section">
             <h2>xxxxx</h2>
-            <p>ddddddd</p>
+            <p></p>
             <div class="demo_block">
             </div>
+            <pre class="markup-code">
+                <code>
+                    
+                </code> 
+            </pre>
             <div class="demo-action">
                 <a class="action-show ui-btn ui-btn-orange">显示</a>
                 <a class="action-show ui-btn ui-btn-orange">隐藏</a>
@@ -637,34 +823,6 @@
 </textarea>
 
 <script>
-    function htmlEncode(str)
-    {
-        var s = "";
-        if (str.length == 0) return "";
-        s = str.replace(/&/g, "&gt;");
-        s = s.replace(/</g, "&lt;");
-        s = s.replace(/>/g, "&gt;");
-        s = s.replace(/ /g, "&nbsp;");
-        s = s.replace(/\'/g, "&#39;");
-        s = s.replace(/\"/g, "&quot;");
-        s = s.replace(/\n/g, "<br>");
-        return s;
-    }
-
-    function htmlDecode(str)
-    {
-        var s = "";
-        if (str.length == 0) return "";
-        s = str.replace(/&gt;/g, "&");
-        s = s.replace(/&lt;/g, "<");
-        s = s.replace(/&gt;/g, ">");
-        s = s.replace(/&nbsp;/g, " ");
-        s = s.replace(/&#39;/g, "\'");
-        s = s.replace(/&quot;/g, "\"");
-        s = s.replace(/<br>/g, "\n");
-        return s;
-    }
-
     Zepto(function ($) {
         var lis = '';
         $('.section').each(function (index, item) {
@@ -673,8 +831,8 @@
             var id = $(this).attr('id');
             var parentId = id + '-demo';
             var script = $(this).find('script').html();
-            var markup = $(this).find('.demo_block').html();
-            markup = htmlEncode(markup);
+            var markup = $(this).find('.markup-code code').html();
+
             markup = markup ? markup : '无 HTML 代码';
             script = script ? script : '无 Javascript 代码';
 
