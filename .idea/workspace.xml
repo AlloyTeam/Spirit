@@ -2,66 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f010b40-4445-4caf-9a42-561de26d3d12" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/landscape/source/modules/Pro/js/seed-bak.js" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\action-sheet.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\base.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\button.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\carousel.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\corner-tag.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\dialog.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\dot.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\form.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\icon.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\layout.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\mask.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\mult-selector.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\page-loading.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\pro.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\rich-loading.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\search-bar.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\tab.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\text-loading.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\css\toast.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\demo.bak.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\doc\css\doc.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\doc\img\iphone.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\doc\index.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\doc\js\doc.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\doc\md\getting-started.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\doc\vendor\fingerblast\fingerblast.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\doc\vendor\prettify\prettify.css" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\doc\vendor\prettify\prettify.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\doc\vendor\zepto\dimensions.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\img\icon-search.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\action-sheet.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\bouncefix.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\core.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\dialog.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\dot.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\lazyload.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\loading.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\main.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\mask.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\mult-selector.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\page-loading.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\rich-loading.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\scrollTo.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\state.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\tab.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\text-loading.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\js\toast.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\vendor\requirejs\require.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\TAT\Spirit\source\_posts\modules\Pro\vendor\zeptojs\zepto.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/modules/JMUI/demo.html" afterPath="$PROJECT_DIR$/source/_posts/modules/JMUI/demo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/landscape/layout/_partial/header.ejs" afterPath="$PROJECT_DIR$/themes/landscape/layout/_partial/header.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/_posts/modules/Pro/index.html" afterPath="$PROJECT_DIR$/source/_posts/modules/Pro/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/pro.css" afterPath="$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/pro.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/rich-loading.css" afterPath="$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/rich-loading.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/search-bar.css" afterPath="$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/search-bar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/toast.css" afterPath="$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/toast.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/deploy/index.html" />
     </list>
     <ignored path="Spirit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,14 +43,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carousel.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="carousel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/landscape/source/modules/Pro/js/carousel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0014124294" vertical-offset="1" max-vertical-offset="5480">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="5480">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#257#1335#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/deploy/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.31460676" vertical-offset="0" max-vertical-offset="445">
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,6 +88,7 @@
         <option value="$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/search-bar.css" />
         <option value="$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/toast.css" />
         <option value="$PROJECT_DIR$/source/_posts/modules/Pro/index.html" />
+        <option value="$PROJECT_DIR$/deploy/index.html" />
       </list>
     </option>
   </component>
@@ -200,123 +152,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="landscape" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spirit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spirit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="landscape" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spirit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spirit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="landscape" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spirit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spirit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="landscape" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spirit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Spirit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="landscape" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="deploy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -334,6 +170,7 @@
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -408,10 +245,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2054054" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45837837" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31243244" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -454,14 +291,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/rich-loading.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="547" max-vertical-offset="1140">
-          <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/landscape/source/modules/Pro/css/search-bar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="583" max-vertical-offset="2680">
@@ -728,11 +557,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/landscape/source/modules/Pro/js/carousel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0014124294" vertical-offset="1" max-vertical-offset="5480">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="5480">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#257#1335#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31460676" vertical-offset="0" max-vertical-offset="445">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
