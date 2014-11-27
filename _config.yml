@@ -68,3 +68,4 @@ markdown:
 deploy:
   type: github
   repo: https://github.com/laispace/Spirit.git
+  branch: gh-pages
